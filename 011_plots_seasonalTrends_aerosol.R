@@ -20,36 +20,30 @@ seasons = c("s1","s2","s3","s4")
 
 if(length(list.files("../results/trends/", pattern="aerosol")) == 0){
   
-  funTrendsSig <- function(y){
-    y <- as.numeric(y)
-    idNA <- which(is.na(y)!=T)
-    
-    if (length(idNA) <  0.8*length(y) ){return(NA) # need at least three elements to calculate mk.test
-    } else {
-      
-      # Mann-Kendall Trend Test for assessing significance
-      a <- y[idNA]
-      mkmodel <- trend::mk.test(x=a)
-      suppressWarnings(mkmodel$p.value)
-    }
+ # man-kendall test
+
+trendSig <- function(y){
+  y <- as.numeric(y)
+  idNA <- which(is.na(y)!=T)
+  if (length(idNA) <  0.8*length(y) ){return(NA)
+  } else {
+    a <- y[idNA]
+    mkmodel <- trend::mk.test(x=a)
+    return(mkmodel$p.value)
   }
-  
-  # function to calculate trend slopes - used in trends_raster.R
-  funTrendsDir <- function(y){
-    y <- as.numeric(y)
-    idNA <- which(is.na(y)!=T)
-    if (length(idNA) < 0.8*length(y)) {return(NA)
-    } else {
-      x <- as.numeric(1:length(y))
-      
-      # simple linear regression using ordinary least squares
-      lmodel <- lm(y ~ x, na.action=na.omit)
-      
-      # for lm or mblm
-      dummyStats <- summary(lmodel)
-      suppressWarnings(as.numeric(lmodel$coefficients[2]))# slope
-    }
+}
+
+# linear trend
+trendDir <- function(y){
+  y <- as.numeric(y)
+  idNA <- which(is.na(y)!=T)
+  if (length(idNA) < 0.8*length(y)) {return(NA)
+  } else {
+    x <- as.numeric(1:length(y))
+    lmodel <- lm(y ~ x, na.action=na.omit)
+    return(as.numeric(lmodel$coefficients[2]))
   }
+}
   
   
   # apply the parallel summation of observation numbers for the whole time period
@@ -61,8 +55,8 @@ if(length(list.files("../results/trends/", pattern="aerosol")) == 0){
     
     seasonTrends = lapply(tmpSeasons, function(x){
       beginCluster(parallel::detectCores()-1)
-      slope = clusterR(x, calc, args = list(fun = funTrendsDir))
-      pvalue =  clusterR(x, calc, args = list(fun = funTrendsSig))
+      slope = clusterR(x, calc, args = list(fun = trendDir))
+      pvalue =  clusterR(x, calc, args = list(fun = trendSig))
       endCluster()
       rasterStack = stack(slope,pvalue)
       names(rasterStack) = c("slope","pvalue")

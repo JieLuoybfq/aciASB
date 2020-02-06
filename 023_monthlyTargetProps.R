@@ -6,7 +6,6 @@ library(reshape2)
 library(dplyr)
 
 # select relevant parameters
-paras = str_to_upper(c("aod_550", "ae", "ssa"))
 paras = str_to_upper(c("aod_550", "P", "RH"))
 # read parameters observation number files into raster stack in a list
 paraStacks = lapply(paras, function(x){
@@ -21,33 +20,33 @@ years = 2003:2018
 months = as.character(month(1:12, label = TRUE))
 
 
-if (!file.exists("../results/values/monthly_aerosolProps.rds")){
-# lapply loop through parameters and months to get seasonality for the whole time spawn
-monthlyMeans = lapply(paraStacks, function(x){
-  print(x)
-  tmpLS = lapply(months, function(m){
-    tmp = x[[grep(as.character(m), names(x))]]
-    beginCluster(parallel::detectCores()-1)
-    ymean = clusterR(tmp, calc, args=list(fun=mean, na.rm=TRUE))
-    endCluster()
-    tmp2 = c(na.omit(values(ymean)))
-    df = data.frame(month=rep(m, length(tmp2)), values = tmp2)
-    return(df)
+if (!file.exists("../results/values/monthly_targetProbs.rds")){
+  # lapply loop through parameters and months to get seasonality for the whole time spawn
+  monthlyMeans = lapply(paraStacks, function(x){
+    print(x)
+    tmpLS = lapply(months, function(m){
+      tmp = x[[grep(as.character(m), names(x))]]
+      beginCluster(parallel::detectCores()-1)
+      ymean = clusterR(tmp, calc, args=list(fun=mean, na.rm=TRUE))
+      endCluster()
+      tmp2 = c(na.omit(values(ymean)))
+      df = data.frame(month=rep(m, length(tmp2)), values = tmp2)
+      return(df)
+    })
+    xmean = do.call(rbind, tmpLS)
+    return(xmean)
   })
-  xmean = do.call(rbind, tmpLS)
-  return(xmean)
-})
-
-# preparation for plotting
-names(monthlyMeans) = paras
-for (i in 1:length(paras)){
-  monthlyMeans[[paras[i]]]$type = paras[i]
-}
-
-df = as_tibble(do.call(rbind, monthlyMeans))
-saveRDS(df, file = "../results/values/monthly_aerosolProps.rds")
+  
+  # preparation for plotting
+  names(monthlyMeans) = paras
+  for (i in 1:length(paras)){
+    monthlyMeans[[paras[i]]]$type = paras[i]
+  }
+  
+  df = as_tibble(do.call(rbind, monthlyMeans))
+  saveRDS(df, file = "../results/values/monthly_targetProbs.rds")
 } else {
-  df = readRDS("../results/values/monthly_aerosolProps.rds")
+  df = readRDS("../results/values/monthly_targetProbs.rds")
 }
 
 
@@ -76,4 +75,4 @@ meanplot = ggplot(df, aes(x=month))+
   theme(axis.text.x = element_text(angle = 45))
 
 # saving plot to disk
-ggsave(plot=meanplot, file = "../results/plots/aerosolProps_monthly.png", dpi=600, device="png", width = 20, height = 10)
+ggsave(plot=meanplot, file = "../results/plots/targetProps_monthly.png", dpi=600, device="png", width = 20, height = 10)

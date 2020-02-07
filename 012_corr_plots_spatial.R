@@ -76,8 +76,6 @@ corPlotS3 = levelplot(corVals$s3, par.settings=mytheme, margin=FALSE,  breaks=br
 corPlotS4 = levelplot(corVals$s4, par.settings=mytheme, margin=FALSE, breaks=breaks, colorkey = T)+ 
   latticeExtra::layer(sp.points(pValsPoints$s4, col="black", lwd=0.4, cex=.3))
 
-grids = grid.arrange(arrangeGrob(corPlotS1, corPlotS2, corPlotS3, corPlotS4),
-                     arrangeGrob(draw.colorkey(key, draw=F)), nrow=1)
 
 
 grids = c(a = corPlotS1, b= corPlotS2, c=corPlotS3, d=corPlotS4, layout = c(2,2), merge.legends=F)

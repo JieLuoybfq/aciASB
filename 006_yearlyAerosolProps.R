@@ -6,10 +6,10 @@ library(dplyr)
 
 # select relevant parameters
 paras = str_to_upper(c("aod_550", "ae", "ssa"))
-
+paras = str_to_upper("rh")
 # read parameters observation number files into raster stack in a list
 paraStacks = lapply(paras, function(x){
-  stack(list.files(paste0("../results/",x), pattern = "mean", full.names = TRUE))
+  stack(list.files(paste0("../results/",x), pattern = "median", full.names = TRUE))
 })
 
 # vector indicating the years for which to calculate mean values
@@ -69,5 +69,5 @@ meanplot = ggplot(df, aes(x=year))+
   theme(axis.text.x = element_text(angle = 45))
 
 # saving plot to disk
-ggsave(plot=meanplot, file = "../results/plots/aerosolProps_yearly.png", dpi=600, device="png", width = 20, height = 10)
+ggsave(plot=meanplot, file = "../results/plots/RH_yearly.png", dpi=600, device="png", width = 20, height = 10)
 

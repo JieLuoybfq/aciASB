@@ -2,11 +2,13 @@ library(ggplot2)
 
 totalCorr = readRDS("../results/totalCorr.rds")
 
-ggplot(data=totalCorr, aes(y=estimate, x=contVar, fill=contVar)) +
+plt = ggplot(data=totalCorr, aes(y=estimate, x=contVar, fill=contVar)) +
   geom_bar(stat="identity", width = .5) +
   facet_wrap(~season)+
-  scale_fill_brewer(palette="Dark2") +
+  scale_fill_brewer(palette="Set2") +
   ylab("Spearman's Rho")+
   xlab("Control Variables")+
   labs(fill = "Control Variables")+
-  theme_classic()
+  theme_classic()+
+  coord_flip()
+ggsave(filename="../results/plots/totalCorr.png", plt)

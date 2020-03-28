@@ -4,31 +4,44 @@ scatterPlotMean <- function(parax = "AOD_550", paray = "P", groupv="RH", plot = 
   if(aggrLevel == "monthly") aggPath ="../results/"
   
   para1 = raster::stack(list.files(paste0(aggPath, parax, "/") , pattern = "*mean.tif$", full.names = T))
-  if(parax == "AOD_550") para1[para1 > 1] = NA
-  indNA1 = which(is.na(para1[]))
-  
   para2 = raster::stack(list.files(paste0(aggPath, paray, "/"), pattern = "*mean.tif$", full.names = T))
-  if(paray == "AOD_550") para2[para2 > 1] = NA
-  indNA2 = which(is.na(para2[]))
-  
   paraC = raster::stack(list.files(paste0(aggPath, groupv, "/") , pattern = "*mean.tif$", full.names = T))
-  if(groupv == "AOD_550") paraC[paraC > 1] = NA
-  indNAC = which(is.na(paraC[]))
+
+  # get masking NA layer
+  tmp = raster::stack(para1, para2, paraC)
+  raster::beginCluster(parallel::detectCores()-1)
+  maskNA = raster::clusterR(tmp, calc, args=list(sum, na.rm=FALSE))
+  raster::endCluster()
+  rm(tmp)
+  gc()
   
-  para1[indNA2] = NA
-  para1[indNAC] = NA
-  para2[indNA1] = NA
-  para2[indNAC] = NA
-  paraC[is.na(para1)] = NA
-  paraC[is.na(para2)] = NA
+  # apply masking layer
+  para1 = raster::mask(para1, maskNA)
+  para2 = raster::mask(para2, maskNA)
+  paraC = raster::mask(paraC, maskNA)
+  rm(maskNA)
+  gc()
   
-  values1 = c(na.omit(values(para1)))
-  values2 = c(na.omit(values(para2)))
-  valuesC = c(na.omit(values(paraC)))
+  # raster to vector, excluding NAs
+  values1 = c(na.exclude(values(para1)))
+  values2 = c(na.exclude(values(para2)))
+  valuesC = c(na.exclude(values(paraC)))
   
-  groupC = as.factor(cut(valuesC, seq(0, 100, 2.5), right=F, labels=F))
-  groupVec = seq(0, 100, 2.5)
-  labels = paste(groupVec[as.numeric(levels(groupC))],"%",sep="")
+  # stratify plots by group variable
+  breaks = classInt::classIntervals(valuesC, 10, style = "fisher", intervalClosure = "left")$brks
+  # summVals = summary(valuesC)
+  # min_ = summVals[1]
+  # qu3_ = summVals[5]  
+  # steps = (qu3_ - min_) / 8
+
+  groupC = as.factor(cut(valuesC, breaks, right=F, labels=F, include.lowest=T))
+  groupVec = round(breaks,2)
+  
+  unit = "[dimensionless]"
+  if (groupv == "RH") unit = "%"
+  if (groupv == "CER") unit = "microns"
+  if (groupv == "CWP") unit = "g/m²"
+  labels = paste(groupVec,  unit,sep=" ")
   key = sort(unique(groupC))
   names(labels) = key
   
@@ -37,14 +50,15 @@ scatterPlotMean <- function(parax = "AOD_550", paray = "P", groupv="RH", plot = 
   seasVec = c(rep("S1", length(values1)/4), rep("S2", length(values1)/4),
               rep("S3", length(values1)/4), rep("S4", length(values1)/4))
   data$season = as.factor(seasVec)
-  
+  data = data[-which(is.na(data$valueC)),]
+
   if (plot == TRUE) {
     p <- ggplot2::ggplot(data=data, aes(x=value1, y=value2))+
-      ggplot2::geom_point(aes(color=season))+
+      ggplot2::geom_point(shape=1)+
       ggplot2::facet_wrap(~valueC, ncol=4, scales = "free", labeller=labeller(valueC=labels))+
       ggplot2::xlab(parax)+
       ggplot2::ylab(paray)+
-      ggplot2::geom_smooth(method = lm, aes(x=value1, y=values2))+
+      ggplot2::geom_smooth(method = lm, aes(x=value1, y=value2))+
       ggplot2::theme_minimal()
     
       lmModels <- data %>% 
@@ -62,6 +76,17 @@ scatterPlotMean <- function(parax = "AOD_550", paray = "P", groupv="RH", plot = 
   }
   return(results)
 }
+library(magrittr)
+library(raster)
+library(ggplot2)
+library(classInt)
+library(dplyr)
 
-x = scatterPlotMean(parax = "AOD_550", paray = "P", groupv = "RH", plot=TRUE, aggrLevel = "season")
-
+aod_rh = scatterPlotMean(parax="AOD_550", paray="P", groupv="RH", plot=T, aggrLevel="season")
+aod_rh[[1]]
+aod_cer = scatterPlotMean(parax="AOD_550", paray="P", groupv="CER", plot=T, aggrLevel="season")
+aod_cer[[1]]
+aod_cwp = scatterPlotMean(parax="AOD_550", paray="P", groupv="CWP", plot=T, aggrLevel="season")
+aod_cwp[[1]]
+aod_cot = scatterPlotMean(parax="AOD_550", paray="P", groupv="COT", plot=T, aggrLevel="season")
+aod_cot[[1]]

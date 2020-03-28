@@ -20,12 +20,12 @@ years = 2003:2018
 months = as.character(month(1:12, label = TRUE))
 if (!file.exists("../results/values/monthly_Precipitation.rds")){
   # lapply loop through parameters and months to get seasonality for the whole time spawn
-  monthlySums = lapply(paraStacks, function(x){
+  monthlyMeans = lapply(paraStacks, function(x){
  
     tmpLS = lapply(months, function(m){
       tmp = x[[grep(as.character(m), names(x))]]
       beginCluster(parallel::detectCores()-1)
-      ysum = clusterR(tmp, calc, args=list(fun=sum, na.rm=TRUE))
+      ysum = clusterR(tmp, calc, args=list(fun=mean, na.rm=TRUE))
       endCluster()
       tmp2 = c(na.omit(values(ysum)))
       df = data.frame(month=rep(m, length(tmp2)), values = tmp2)

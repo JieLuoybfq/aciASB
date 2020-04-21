@@ -108,22 +108,22 @@ for (p in paras){
   })
   names(pValsPoints) = seasons
   
-  trendPlotS1 = levelplot(tmpSlope$s1, par.settings=mytheme, margin=FALSE, xlab.top = "season 1")+ 
+  trendPlotS1 = levelplot(tmpSlope$s1, par.settings=mytheme, margin=FALSE, xlab.top = "a")+ 
     latticeExtra::layer(sp.points(pValsPoints$s1, col="black", lwd=0.4, cex=.3))
   
-  trendPlotS2 = levelplot(tmpSlope$s2, par.settings=mytheme, margin=FALSE, xlab.top = "season 2")+ 
+  trendPlotS2 = levelplot(tmpSlope$s2, par.settings=mytheme, margin=FALSE, xlab.top = "b")+ 
     latticeExtra::layer(sp.points(pValsPoints$s2, col="black", lwd=0.4, cex=.3))
   
-  trendPlotS3 = levelplot(tmpSlope$s3, par.settings=mytheme, margin=FALSE, xlab.top = "season 3")+ 
+  trendPlotS3 = levelplot(tmpSlope$s3, par.settings=mytheme, margin=FALSE, xlab.top = "c")+ 
     latticeExtra::layer(sp.points(pValsPoints$s3, col="black", lwd=0.4, cex=.3))
   
-  trendPlotS4 = levelplot(tmpSlope$s4, par.settings=mytheme, margin=FALSE, xlab.top = "season 4")+ 
+  trendPlotS4 = levelplot(tmpSlope$s4, par.settings=mytheme, margin=FALSE, xlab.top = "d")+ 
     latticeExtra::layer(sp.points(pValsPoints$s4, col="black", lwd=0.4, cex=.3))
   
   
   png(file = paste0("../results/plots/trend_seasonal_",p,".png"), 
       width = 30, height = 30, units = "cm", res = 600)
-  print(grid.arrange(trendPlotS1, trendPlotS2, trendPlotS3, trendPlotS4))
+  print(c(trendPlotS1, trendPlotS2, trendPlotS3, trendPlotS4))
   dev.off()
   
 }

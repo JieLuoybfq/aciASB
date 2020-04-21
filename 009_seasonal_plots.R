@@ -10,7 +10,7 @@ units = c("none","none","micron","none","g/m²","none")
 for (p in paras){
   print(p)
   cer = stack(list.files(paste0("../results/season/",p,"/"), full.names = TRUE,
-                         pattern = "20.._s"))
+                         pattern = "20.._s*"))
   
   
   cer_means = lapply(seasons, function(s){

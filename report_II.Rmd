@@ -225,23 +225,24 @@ The temporal and spatial variations of several aerosol and cloud parameters have
 in the previous seminar paper. Here, we only represent the additional parameters P
 and RH.
 
-<!-- \begin{landscape} -->
-<!-- ```{r prec_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="30%", fig.cap="Boxplots for yearly sum of precipitation [mm].", dpi=72} -->
-<!-- knitr::include_graphics("../results/plots/P_yearly.png") -->
-<!-- ``` -->
 
-<!-- ```{r prec_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="30%", fig.cap="Boxplots for monthly sums of precipitation [mm].", dpi=72} -->
-<!-- knitr::include_graphics("../results/plots/P_monthly.png") -->
-<!-- ``` -->
+```{r prec_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly sum of precipitation [mm].", dpi=72}
+knitr::include_graphics("../results/plots/P_yearly.png")
+```
 
-<!-- ```{r rh_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="30%", fig.cap="Boxplots for yearly median of relative humididty [%].", dpi=72} -->
-<!-- knitr::include_graphics("../results/plots/RH_yearly.png") -->
-<!-- ``` -->
+```{r rh_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly median of relative humididty [\\%].", dpi=72}
+knitr::include_graphics("../results/plots/RH_yearly.png")
+```
 
-<!-- ```{r rh_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="100%", fig.cap="Boxplots for monthly median relative humidity [%].", dpi=72} -->
-<!-- knitr::include_graphics("../results/plots/RH_monthly.png") -->
-<!-- ``` -->
-<!-- \end{landscape} -->
+
+```{r prec_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="60%", fig.cap="Boxplots for monthly sums of precipitation [mm].", dpi=72}
+knitr::include_graphics("../results/plots/P_monthly.png")
+```
+
+```{r rh_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="60%", fig.cap="Boxplots for monthly median relative humidity [\\%].", dpi=72}
+knitr::include_graphics("../results/plots/RH_monthly.png")
+```
+
 
 
 _Temporal and spatial dynamics for P_

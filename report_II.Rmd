@@ -144,58 +144,6 @@ aerosol (MOD/MYD04) [@Levy2017] and cloud (MOD/MYD06) [@Platnick2017] parameters
 as well as the corresponding geolocation files (MOD/MYD03) [@Team2012]. 
 
 
-### Aerosol properties
-The aerosol optical depth (AOD) were retrieved from the MOD/MYD04 data product based on the Deep Blue 
-algorithm (DB) described by @Hsu2004 and @Hsu2006. DB uses wavelengths in the 
-blue spectrum to overcome the phenomenon of absorbing aerosols darkening the 
-reflectance measured at the sensor over bright surfaces making it more suitable 
-for aerosol retrievals over bright surfaces such as deserts [@Hsu2004]. It is 
-applied to clear-sky snow-free pixels over land only and uses the 412, 470/490, 650, 860, 1240 
-and \linebreak 2110 $\mu m$ spectral bands on a final pixel size of 10 x 10 $km$ [@Hsu2013]. 
-
-_Aerosol Optical Depth (AOD):_ The calculation 
-of AOD is based on a established lookup table which differentiates for 
-several regions around the globe based on dominant aerosol modes found by empirical 
-measurements [@Hsu2004]. Two different retrieval techniques can be applied: 
-For moderate dust loadings with AOD < 0.7 the algorithm uses a two-channel 
-technique to retrieve aerosol parameters based at 412 and 470/490 $\mu m$. Under 
-heavy dust loadings with AOD > 0.7 a three-channel technique with the additional
-670 $\mu m$ band may retrieve values for the combination 412  vs. 670 $\mu m$
-and 470/490 vs. 670 $\mu m$. 
-
-### Cloud properties
-The algorithm to retrieve cloud optical and microphysical parameters at a nominal 
-resolution of 1 $km$ makes use of the 645, 1640, 2130 and 3750 $\mu m$ channels over
-land during daytime. It is applied to cloud overcast pixels only and differentiates 
-the calculation according to the dominant phase of the cloud [@Baum2012]. 
-Additionally, information of the surface albedo is included in the algorithm since
-cloud reflectance is altered due to the underlying surface characteristics. 
-Here, only the parameters describing the cloud’s microphysics (COT, CER and CWP) 
-are extracted.
-
-_Cloud Effective Radius (CER) and Cloud Optical Thickness (COT):_ CER and COT are 
-derived from water-absorbing bands of MODIS (1.6, 2.1, 3.7 $\mu m$) coupled with 
-non-absorbing bands (0.65, 0.86 and 1.2 $\mu m$) [@Platnick2003]. The algorithm 
-uses a radiative transfer model to calculate a reflected intensity field for
-combinations of CER and COT. Both parameters are then retrieved based on the measured
-reflectance. With the introduction of the algorithm version C6 the retrieval of 
-cloud parameters for optical thin clouds has been enabled [@Platnick2017]. 
-For this study the data layers which retrieve CER and COT based on the relation 
-between 2.1 $\mu m$ and 0.65, 0.86 and 1.2 $\mu m$ were used.
-
-_Cloud Water Path (CWP):_ The CWP is directly linked to CER and COT and 
-refers to the total liquid water amount found in the atmospheric column 
-above a given pixel. It can be calculated in a simplified manner by use of Formula 2:
-
-\begin{equation}
-CWP = y * CER * COT
-\end{equation}
-
-This form of the calculation is beneficial for satellite-based measurements, 
-since CWP can be estimated with information on COT and CER only. The term $y$ 
-is either determined by adiabatic assumptions [@Wood2006] or the assumption of a 
-vertically homogeneous water column [@Stephens1978] becoming either the ratio 
-$^5/_9$ or $^2/_3$, respectively.
 
 ### Precipitation
 _Precipitation (P):_ Monthly sums of precipitation are derived from the CHIRPS
@@ -271,273 +219,202 @@ is calculated to investigate the overall direction and strength of
 correlation between aerosol and cloud parameters [@Alam2010, 1170f.].
 
 # Results
-## Temporal and spatial variations
+## Temporal and spatial variations of P and RH
 
 The temporal and spatial variations of several aerosol and cloud parameters have been presented
 in the previous seminar paper. Here, we only represent the additional parameters P
 and RH.
 
-\begin{landscape}
-```{r aerosol_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="100%", fig.cap="Boxplots for yearly sum of precipitation [mm].", dpi=72}
-knitr::include_graphics("../results/plots/P_yearly.png")
+<!-- \begin{landscape} -->
+<!-- ```{r prec_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="30%", fig.cap="Boxplots for yearly sum of precipitation [mm].", dpi=72} -->
+<!-- knitr::include_graphics("../results/plots/P_yearly.png") -->
+<!-- ``` -->
+
+<!-- ```{r prec_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="30%", fig.cap="Boxplots for monthly sums of precipitation [mm].", dpi=72} -->
+<!-- knitr::include_graphics("../results/plots/P_monthly.png") -->
+<!-- ``` -->
+
+<!-- ```{r rh_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="30%", fig.cap="Boxplots for yearly median of relative humididty [%].", dpi=72} -->
+<!-- knitr::include_graphics("../results/plots/RH_yearly.png") -->
+<!-- ``` -->
+
+<!-- ```{r rh_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="100%", fig.cap="Boxplots for monthly median relative humidity [%].", dpi=72} -->
+<!-- knitr::include_graphics("../results/plots/RH_monthly.png") -->
+<!-- ``` -->
+<!-- \end{landscape} -->
+
+
+_Temporal and spatial dynamics for P_
+During the time series under study (2003 - 2018) we can observe a varying 
+pattern for precipitation (figure x). In 2003 we observe relativly high 
+precipitation rates with an average above 200 mm per pixel and a median even 
+slightly higher than the mean. This amount of high precipitation rates from the 
+year 2003 is not reached again during the time series, instead most of the years 
+indicate a mean value of precipitation below 150 mm per pixel. The years 2008, 
+2011, and 2014 show exceptional low precipitation which is in accordance with 
+other studies which report this years as being drought years in Central Asia 
+[@Quelle]. In 2015 and 2016 precipitation is higher than during the other years, 
+however the high precipitation rate of 2003 is not reached.
+Concerning the intra-annual pattern of precipitation, we observe the highest 
+rates in March and April as well as another peak during November and December of
+about 19 mm per pixel. During the summer months of July to September we observe 
+the lowest precipitation rates with means about 5 mm. The seasonality of 
+precipitation is thus clearly visible and is in accordance with the seasonal 
+divison we chose here for our analysis.
+The spatial pattern of P shows that higher precipitation rates are found above
+the Aral Sea and Aralkum dessert (figure x) as well as in the South-East of the 
+study area during the first and fourth season. The second and third season are
+charchterized by very low precipitation rates, especially in the South of the 
+study area. The linear trend analysis indicates significant linear trends only 
+during the first season in the South-East of the study area. Here, moderate
+to high negative slopes seem to dominate the trend (about -2 to -5 mm/year). 
+During the second season we also observe moderate to high decrease of precipitation
+rate close to the Aral Sea and its Northern neighbourhood. During the third and
+fourth season we barley observe patterns of significan linear trends. 
+
+```{r p_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for P for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/seasonal_means_P.png")
 ```
 
-```{r aerosol_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="100%", fig.cap="Boxplots for monthly sums of precipitation [mm].", dpi=72}
-knitr::include_graphics("../results/plots/P_monthly.png")
-```
-\end{landscape}
+_Temporal and spatial dynamics for RH_
+Concerning the inter-annual dynamic of relative humiditiy, we osberve a general 
+decrease of RH per pixel during the first few years. Similiar to P, the highest 
+level of RH is reached in 2003 with a mean value of 50%. In 2010 and 2014, we 
+observe RH values below 40%, and in 2012 and 2018 RH reaches only about 42%. 
+With the exception of 2014, we do not see the gravity of the drought years of 
+2008 and 2011 in the dynamic of RH. During most other years RH usually reaches 
+between 43 - 46%, however, in 2015 and 2016 the mean is about 48%, in the same 
+years we also observed relativly high precipitation rates.
+The intra-annual dynamic of RH follows a very clear seasonal pattern with the 
+lowest RH (~31%) found in the warm summer months June to August. RH is maximized
+during December to March, with levels between 55 - 58%.
+The spatial pattern of RH shows higher values throught the study area for the 
+first and foruth season. For the second and foruth season, the pattern is very similar
+with the lowest RH found in the South-East and a positive gradient towards the 
+North-West of the studyarea. However, the values during the second season are 
+substantially lower than compared to the third. Significant linear trends are 
+only found during the second season South of the Aral Sea. Here, low negative
+slopes dominate the trend (about -0.3%/year).
 
-
-\begin{landscape}
-```{r cloud_yearly, echo=FALSE, fig.align="center", out.width="100%", fig.cap="Boxplots for yearly median of relative humididty [%].", dpi=72}
-knitr::include_graphics("../results/plots/RH_yearly.png")
-```
-
-```{r cloud_monthly, echo=FALSE, fig.align="center", out.width="100%", fig.cap="Boxplots for monthly median relative humidity [%].", dpi=72}
-knitr::include_graphics("../results/plots/RH_monthly.png")
-```
-\end{landscape}
-
-
-_Aerosol properties trend detection:_ The AOD is higher around and North-West of 
-the Aral Sea with maximum values in spring and autumn (Figure 6). 
-The long-term trend analysis shows an increasing trend close to the Aral Sea and 
-Aralkum, while the values further away tend to decrease (Appendix, Figure 17). 
-The slopes picture a rather small change for the mean values. 
-
-```{r ae_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for AE for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/seasonal_means_AE.png")
+```{r rh_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for RH for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/seasonal_means_RH.png")
 ```
 
-Contrary to this, the AE reaches its lowest values in spring and autumn, 
-while the maximum appears in summer and winter (Figure 7). Overall, 
-the AE increases with rising distance to Aral Sea. In spring and autumn, a great 
-proportion of the areas East and West to the Aralkum show values of AE < 1.0. The 
-trend detection depicts in spring, summer and winter mostly increasing values (Appendix, Figure 18). 
-Only individual pixels show a significant increase especially in the East of the 
-Aral Sea. In autumn, decreasing trends are dominating, but still can only be applied to 
-the areas close to the lake surface and the Aralkum. 
+## Correlation analysis between AOD and P
+As indicated in the methods section, we analysed the partial correlation between
+AOD and P controlling for three parameters of cloud microphysics and RH. As a 
+baseline we also calculated the correlation without any controling variable. We 
+excluded all pixels for which there were no observations in AOD at any time step
+in order to capture the complete time series of the remainng pixels. This areas
+are indicated in grey color in the figures below. 
 
-```{r ssa_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for SSA for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/seasonal_means_SSA.png")
+
+```{r cor_aod_p, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/cor_AOD_550_P.png")
 ```
 
-The SSA shows a considerable spatial pattern with higher values around the Aral Sea 
-(Figure 8). In the South and North-East of the study area, values are considerably 
-lower. Especially in spring, there is a high variation between the individual 
-regions. As for the trend detection, mostly decreasing trends are observed except 
-for the spring season (Appendix, Figure 19). Close to the surface of the Aral Sea and 
-the Aralkum, however, stronger increases in SSA are found during spring and autumn
-and fewer steep decreases in summer and winter. In contrast to the other aerosol 
-properties, most of the pixels are characterized by a significant detection of a 
-linear decreasing long-term trend. In contrast, a monotonous trend detection for 
-AOD and AE is not possible on a whole scale level. Here, significant trends only appear 
-for individual pixels with a high spatial and temporal divergence. In addition, 
-all slopes only display slight changes as the slopes are weakly defined.
+_Baseline correlation_
+Areas with missing values are concentrated around the Aral Sea for all seasons. 
+During the first and third season, the number of missing observations is higher 
+than during the other seasons. For the first season, we observe a pattern of 
+strongly negative correlation in the center of the studyarea and South of the 
+Aral Sea. We also observe some, though non-significant, positive correlations in
+the North and the far South-East of the studyarea. During the second season,
+there are only very few locations with significant correlations. In general, the
+picture is very patchy with positive and negative correlations distrubted fairly
+random in the studyarea, especially next to the Aral Sea. In the third season we
+observe a comprehensive patch of negative correlations in the North of the studyarea
+and positive correlations in the South. However, the positive correlations are 
+not significant. A similar pattern, though larger in size extending to the South
+is observed during the foruth season. These correlations are significant and negative
+an generally between -0.4 and -0.7.
 
-
-```{r cot_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for COT for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/seasonal_means_COT.png")
+```{r cor_aod_p_cer, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for CER during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CER.png")
 ```
 
-_Cloud properties trend detection:_ The COT depicts a seasonal cycle with lowest 
-values in spring and autumn and higher values in summer and winter (Figure 9). 
-During the latter ones, maximum values are reached in the southern region. 
-The Aral Sea and the Aralkum are visible as regions with moderately lower values. 
-The trend analysis shows the dominance of positive slopes in spring and autumn 
-especially around the Aral Sea and Aralkum whereas values in the other seasons 
-are rather decreasing (Appendix, Figure 20).  
+_Partial Correlation controlling for CER_
+Concerning the spatial distribution of the correlations, the pattern is very 
+similar to the baseline correlation analysis. However, we observe slight increases
+in the amplitute of the signficant negative correlations for the seasons (between
+-0.6 and -0.85).
 
-```{r cer_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for CER [in microns] for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/seasonal_means_CER.png")
+```{r cor_aod_p_cot, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for COT during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/cor_AOD_550_P_by_COT.png")
 ```
 
-Also, these regions are shown as well as a clear shape in all seasons for CER 
-(Figure 10). They are characterized by very low values in contrast to the rest 
-of the study area. Apart from that, values are generally higher in spring and 
-autumn with the spatial maximum appearing in the North-East of the study area, 
-while throughout all seasons lower values can be observed South-East and West 
-of the Aral Sea’s surface. The trend analysis agrees with the pattern of a 
-decreasing CER during spring, autumn and winter especially around the lake and 
-the Aralkum (Appendix, Figure 21).
+_Partial Correlation controlling for COT_
+The amplitude and spatial distribution is very similar to the preceeding correlation
+analysis. However, for the third and fourth season the total number of significant
+correlations decreases and the comprehensive areas of negative correlations
+are observed to become more patchy.
 
-```{r cwp_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for CWP [in g/m2] for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/seasonal_means_CWP.png")
+```{r cor_aod_p_cwp, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for CWP during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CWP.png")
 ```
 
-Minimal values for CWP during all seasons are observed around the Aral Sea as 
-well while they increase only in the South of the study area during summer and winter 
-(Figure 11). No clear seasonal differences are observed, instead, a diverging 
-seasonal pattern dominates (Appendix, Figure 22). During spring and autumn, there is a 
-very diverse pattern of trends. The slopes are positive during summer and winter 
-in close distance to the lake and the Aralkum. These pixels are the only ones 
-showing a significant trend during these seasons, but the rest of the study 
-area is otherwise characterized by a decreasing CWP. Like for the aerosol 
-properties, a linear trend detection for all cloud properties on a whole scale 
-level is not possible. Individual parameters imply the existence of a trend, 
-but most pixels do not apply to the significance level.
+_Partial Correlation controlling for CWP_
+For CWP again, the main patterns compared to the other analysis do not change. 
+However, there seems to be a slight increase in the negative correlations during 
+the fourth season.
 
-\newpage
-
-## Relationship between aerosol and cloud properties
-
-_Relationship between aerosol properties:_ The analysis of the relationship 
-between AOD and AE shows a seasonal dependence with mainly a moderate to high 
-negative correlation (Table 1). The spatial analysis implies mostly negative 
-values for the study area with the strongest relationship in the central region. 
-They tend to be generally stronger in spring and autumn. 
-
-Close to the Aral Sea,there are some pixels showing a positive correlation, but 
-only negative correlated pixels can be seen as statistically significant 
-(Figure 12). The relationship between the AOD and SSA depicts an 
-opposing and also weaker relationship, with more positive correlations and a 
-higher spatial diversity (Table 1). However, again only negative correlations 
-are found to be statistically significant especially during summer and autumn 
-(Figure 13).
-
-```{r corr_table, echo=F, fig.pos="H", fig.align="center"}
-data = readRDS("../results/values/corPrintTable.rds")
-names(data)[2:5] = c("spring", "summer", "autumn", "winter")
-data$spring = stringr::str_remove_all(data$spring, "[*]")
-data$summer = stringr::str_remove_all(data$summer, "[*]")
-data$autumn = stringr::str_remove_all(data$autumn, "[*]")
-data$winter = stringr::str_remove_all(data$winter, "[*]")
-data$parameters = stringr::str_remove_all(data$parameters, "[_550]")
-knitr::kable(data,"latex", caption = "Correlation coefficients between aerosol and cloud parameters by season.")%>%
-  kable_styling(latex_options = c("HOLD_position"))
+```{r cor_aod_rh, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for RH during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH.png")
 ```
 
-```{r cor_aod_ae, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and AE during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/cor_AOD_550_AE.png")
+_Partial Correlation controlling for RH_
+When controlling for RH, some changes can be observed. In the first season,
+the size of the patch of significant negative correlations around the Aral Sea
+and Aralkum dessert is substantially reduced. The same finding holds true for
+the Norther patch of negative correlations in the third season. In the fourth 
+season, directly North of the Aral Sea, we observe fewer significant negative 
+correlations, however, the comprehensive patch in the Center of the studyarea
+can still be observed. In general, when controlling for RH, there seems to be 
+a shift into the direction of positive correlations, because the positive correlations
+increase in amplitude without reaching the level of significance.
+
+
+```{r cor_aod_all, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for all other variables during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png")
 ```
 
-```{r cor_aod_ssa, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and SSA during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/cor_AOD_550_SSA.png")
+_Partial Correlation controlling for CWP, COT, CWP, and RH_
+When controlling for all variables, the correlations patterns get more patchy during 
+all seasons, which means in large proportions of the studyarea we observe non-significant
+postive and negative correlations in fairly random patterns next to each other.
+The exceptions are a comprehensive patch of negative correlations in the North 
+of the studyarea in the third season, though its size is substantially reduced
+compared to the baseline analysis, as well as the comprehensive patch
+of negative correlations in the Center of the studyarea during the fourth season.
+Compared to the analysis controling for RH only, the non-significant positive
+correlations also seem to decrease in amplitutde.
+
+_Analysis of signficant correlations_
+Figure xx shows the correlations of selected pixels which showed significant correlations
+for all four seasons and based on the controlling scenario. For all seasons and 
+analysis we observe negative correlations between AOD and P between -0.1 and -0.38.
+The correlation values for the second season are substantially closer to 0 than 
+compared to all other seasons which can be easily explained by the very small number
+of pixels which showed significant correlations during this seasons. Thus, the 
+results for the second season are omitted hereafter.
+For the first and third season, controlling for parameters of cloud microphysics
+seem to increase the negative correlations compared to the baseline analysis while
+controling for RH delivers smaller correlations. This observations is not valid 
+for the fourth season, where controlling for RH increases the correlation 
+coefficient, while controling for cloud microphysics shows little to no effects.
+When all variables are controlled for, we observe no effects on the correlation 
+coefficient for the first and fourth season. In the third season, conrolling
+for all variables together decreases the coefficient from -0.38 to -0.28.
+
+```{r total_corr, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Correlation coefficients for all pixels with significant correlations by season.", dpi = 72}
+knitr::include_graphics("../results/plots/totalCorr.png")
 ```
-
-```{r cor_aod_cot, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and COT during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/cor_AOD_550_COT.png")
-```
-
-_Relationship between AOD and COT:_ The relationship between AOD and COT shows overall very low to low correlation coefficients (Table 1). Based on this a highly mixed distribution of negative and positive correlation coefficients can be identified. The variation makes it hard to find a clear pattern, though there is a band of significant negative correlations from the North-West to the South-East of the study area. Most pixels showing a negative sign are statistically significant, even though the overall strength of the relationship is questionable (Figure 14). 
-
-```{r cor_aod_cer, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and CER during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/cor_AOD_550_CER.png")
-```
-
-_Relationship between AOD and CER:_ The AOD and the CER have a generally low to medium negative correlation (Table 1). The spatial analysis shows only negative correlations to be statistically significant. They tend to occur mostly in the central region of the study area as well as North and East of the Aral Sea and the Aralkum (Figure 15). The strongest relationship is observed during in spring and autumn (ibid.).
-
-```{r cor_aod_cwp, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and CWP during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/cor_AOD_550_CWP.png")
-```
-_Relationship between AOD and CWP:_ The relationship between AOD and the CWP is negative in total, with positive values only in spring. All values indicate a very low to low correlation (Table 1). The correlation maps show spatial highly deviating relationships with the highest values to be found North and West of the Aral Sea (Figure 16). Instead of a seasonal cycle, again a spatial pattern with a band of negative slopes on a highly significant level can be observed. Positive slopes rarely show significance throughout all seasons.
 
 
 # Discussion
 
-Most of the depicted parameters do not show a monotonous trend. Contrary to 
-former assumptions, the aerosol concentration does not show a linear increase from 
-2003 – 2018. While the size distribution reveals deviating values for AE, this proxy 
-cannot be uniformly applied for estimating the aerosol type [@Huang2014, 400ff.]. 
-Only in spring and autumn and together with an increasing absorption rate through 
-decreasing SSA the hypotheses of dominating mineral dust is supported in some 
-parts of the study area. For the cloud properties, no monotonous trend is visible. 
-It is indicated that COT, CER and CWP are decreasing, but the statistical significance 
-of these results is uncertain. Therefore, an analysis of the clouds microphysics is 
-difficult. 
-Also, the seasonal cycles which were assumed to fit together with the 
-supposed relationships between aerosol and cloud properties do not overlap. 
-Instead, the relationships between the individual parameters display rather weak correlations. 
-In contrast to other studies in similar regions of Central Asia which obtained 
-stronger results, their information value needs to be reconsidered [@Alam2010, 1165ff.; @Sharif2015, 660ff.]. 
-
-In addition, the first and second indirect aerosol effect were analysed. 
-Together with a rising AOD, a lower CER and an increasing COT, the Twomey effect 
-may be assumed [@Huang2014, 406ff.]. The existence of the second indirect effect 
-was investigated inspecting the correlation between AOD and CWP (ibid.). 
-For small parts of the region – especially around the Aralkum – these hypotheses 
-seem to be applicable. There are hints for a precipitation feedback loop because 
-of the overall negative correlation between AOD and the cloud properties. But 
-since the data show a tremendous variability in parameter’s relationships and 
-overall mostly low correlations, no definite statement for answering the scientific 
-question is possible. The hypotheses set before can be neither confirmed nor denied. 
-The analysis illustrates the complexity and difficulty of aerosol-cloud interactions as
-most relationships cannot be explained by merely the correlation coefficients 
-used in this study. As pictured before, the aerosol cloud interactions demonstrate 
-a high spatial and temporal variability with generally stronger characteristics 
-in spring and autumn. Since all results cannot be confirmed for the whole study 
-area and every parameter, they need to be treated with caution.
-
-Instead, the influence of other parameters becomes apparent. These include not 
-only meteorological conditions [@Sharif2015, 657], but also the importance of external 
-effects [@Huang2006a, 4]. Mesoscale convective systems may cover local processes 
-and can disguise the origin of interacting factors [@Sharif2015, 660ff.]. 
-As no trajectory analysis is included, the origin of the aerosols stays unknown (ibid.). 
-Furthermore, changes in the land use, e.g. through irrigation, may lead to more 
-greening and less aerosol deposition, thus modifying the correlation results [@Jin2017, 2f.]. 
-Also, the vertical structure of the clouds is an important feature in order to 
-analyse the effects of aerosols on their hydrological cycle. Regarding these, 
-the analysis needs to include more precise parameters to ensure reliable results 
-[@Costantino2010, 4f.; @Li2018, 22ff.]. 
-Apart from that the aggregation of the data can lead to an over- or 
-underestimation of the estimated effects [@Sayer2013, 7864ff.]. In addition, 
-the dimension of the existing retrieval bias in the MODIS data caused by the 
-water surface of the Aral Sea stays unknown thus not the leading to strictest 
-results [@Jin2017, 9f.]. Nevertheless, there seems to be potential for optimizing [@Li2018, 22ff.].
-The combination of instrumental and spatial difficulties inhibits a more detailed 
-statement in regard to answering the scientific questions and hypotheses assumed before.
-This said, it is necessary to include a variety of possible influences in the 
-analysis as well as taking further investigations in the cloud microphysical 
-properties. Future research needs to take a closer look at the changes in the 
-hydrological cycle: the feedback loop for rainfall rates may be implied, but 
-its dimension and quantification in the region remain unclear. 
-
 # Conclusion
-
-As a result, the quantification of the aerosol-cloud interaction in the Aral Sea 
-region includes several difficulties in gaining a reliable output. An accurate 
-answer for the scientific questions needs to be replaced by a first approximation. 
-The existence of a relationship between most of the aerosol and cloud properties can 
-be assumed, but their strength, direction and possible consequences need to be 
-further investigated. The results of this study may provide an overview for a 
-study area that has not been object of this kind of research before. The problems 
-that occurred can be led back to either instrumental and methodical issues or the 
-complexity of natural processes. As the study itself dealt with a highly relevant 
-topic many uncertainties in dealing with cloud microphysics still exist to this point. 
-It is a future challenge to pursue solutions to these obstacles. Especially in highly 
-vulnerable regions like the Aral Sea, changes in the hydrological pattern originating 
-to aerosol concentration alterations may inhabit considerable threats to humans and 
-nature, e.g. the expansion of deserts and ongoing salinization. Therefore, an 
-estimation of precipitation patterns and shifts as well as the clouds vertical 
-structure and more precise aerosol type analyses are crucial for future research.
 
 # References
 
 <div id="refs"></div>
-
-
-# Appendix
-
-```{r trend_aod, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of linear trend for AOD during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/trend_seasonal_AOD_550.png")
-```
-
-```{r trend_ae, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of linear trend for AE during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/trend_seasonal_AE.png")
-```
-
-```{r trend_ssa, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of linear trend for SSA during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/trend_seasonal_SSA.png")
-```
-
-```{r trend_cot, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of linear trend for COT during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/trend_seasonal_COT.png")
-```
-
-```{r trend_cer, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of linear trend for CER [in microns] during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/trend_seasonal_CER.png")
-```
-
-```{r trend_cwp, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of linear trend for CWP [in g/m²] during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/trend_seasonal_CWP.png")
-```

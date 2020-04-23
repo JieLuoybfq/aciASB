@@ -9,17 +9,20 @@ output:
     df_print: kable
     latex_engine: pdflatex
     fig_caption: true
+    extra_dependencies: ["float"]
 bibliography: literature.bib
 csl: elsevier-harvard.csl
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.pos = "H", out.extra = "")
 library(tidyr)
 library(dplyr)
 library(kableExtra)
 ```
+
 \newpage
+
 ```{r abbreviations, echo=F, eval=F,message=F, warning=F, fig.align="center"}
 df = tribble(
     ~Abbreviation, ~ Explanation,
@@ -112,7 +115,7 @@ and thus will be evaluated in the following study.
 ## Study area
 The Aral Sea basin is located in the border region between Kazakhstan and Uzbekistan 
 (57 – 67 °E, 42 – 49 °N) and acts as the tail-end lake of the contributing rivers 
-Amu Darya and Syr Darya (Figure 1). The study area is part of the global dust belt 
+Amu Darya and Syr Darya (Fig. \ref{fig:aoi}). The study area is part of the global dust belt 
 and shows typical features of a temperate continental climate with semi-arid to 
 arid conditions. The summers are short and hot with a mean of 28.2 $^\circ C$ while 
 winters are long and cold with a mean of -3.6 $^\circ C$. Precipitation rates are quite 
@@ -141,9 +144,10 @@ by two platforms (TERRA and AQUA) orbiting the Earth on a Sun-synchronous polar
 orbit. It measures solar and thermal radiation in 36 bands in resolutions ranging 
 from 250 $m$ to 1 $km$. For this study, daily resolution Level-2 data were used for 
 aerosol (MOD/MYD04) [@Levy2017] and cloud (MOD/MYD06) [@Platnick2017] parameters 
-as well as the corresponding geolocation files (MOD/MYD03) [@Team2012]. 
-
-
+as well as the corresponding geolocation files (MOD/MYD03) [@Team2012]. For 
+the explanation of the parameter retrival, the reader is refered to the prior seminar
+work, as these explanations are not duplicated here, except for the newly included 
+parameters of precipitation and relative humidity.
 
 ### Precipitation
 _Precipitation (P):_ Monthly sums of precipitation are derived from the CHIRPS
@@ -226,28 +230,10 @@ in the previous seminar paper. Here, we only represent the additional parameters
 and RH.
 
 
-```{r prec_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly sum of precipitation [mm].", dpi=72}
-knitr::include_graphics("../results/plots/P_yearly.png")
-```
-
-```{r rh_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly median of relative humididty [\\%].", dpi=72}
-knitr::include_graphics("../results/plots/RH_yearly.png")
-```
-
-
-```{r prec_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="60%", fig.cap="Boxplots for monthly sums of precipitation [mm].", dpi=72}
-knitr::include_graphics("../results/plots/P_monthly.png")
-```
-
-```{r rh_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="60%", fig.cap="Boxplots for monthly median relative humidity [\\%].", dpi=72}
-knitr::include_graphics("../results/plots/RH_monthly.png")
-```
-
-
 
 _Temporal and spatial dynamics for P_
 During the time series under study (2003 - 2018) we can observe a varying 
-pattern for precipitation (figure x). In 2003 we observe relativly high 
+pattern for precipitation (Fig. \ref{fig:prec_yearly}). In 2003 we observe relativly high 
 precipitation rates with an average above 200 mm per pixel and a median even 
 slightly higher than the mean. This amount of high precipitation rates from the 
 year 2003 is not reached again during the time series, instead most of the years 
@@ -256,14 +242,31 @@ indicate a mean value of precipitation below 150 mm per pixel. The years 2008,
 other studies which report this years as being drought years in Central Asia 
 [@Quelle]. In 2015 and 2016 precipitation is higher than during the other years, 
 however the high precipitation rate of 2003 is not reached.
+
+
+```{r prec_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly sum of precipitation [mm].", dpi=72}
+knitr::include_graphics("../results/plots/P_yearly.png")
+```
+
+
+```{r prec_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="60%", fig.cap="Boxplots for monthly sums of precipitation [mm].", dpi=72}
+knitr::include_graphics("../results/plots/P_monthly.png")
+```
+
+
 Concerning the intra-annual pattern of precipitation, we observe the highest 
 rates in March and April as well as another peak during November and December of
-about 19 mm per pixel. During the summer months of July to September we observe 
+about 19 mm per pixel (Fig. \ref{fig:prec_monthly}). During the summer months of July to September we observe 
 the lowest precipitation rates with means about 5 mm. The seasonality of 
 precipitation is thus clearly visible and is in accordance with the seasonal 
 divison we chose here for our analysis.
+
+```{r p_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for P for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+knitr::include_graphics("../results/plots/seasonal_means_P.png")
+```
+
 The spatial pattern of P shows that higher precipitation rates are found above
-the Aral Sea and Aralkum dessert (figure x) as well as in the South-East of the 
+the Aral Sea and Aralkum dessert (Fig. \ref{fig:p_seasonal}) as well as in the South-East of the 
 study area during the first and fourth season. The second and third season are
 charchterized by very low precipitation rates, especially in the South of the 
 study area. The linear trend analysis indicates significant linear trends only 
@@ -273,24 +276,32 @@ During the second season we also observe moderate to high decrease of precipitat
 rate close to the Aral Sea and its Northern neighbourhood. During the third and
 fourth season we barley observe patterns of significan linear trends. 
 
-```{r p_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for P for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
-knitr::include_graphics("../results/plots/seasonal_means_P.png")
-```
+
 
 _Temporal and spatial dynamics for RH_
 Concerning the inter-annual dynamic of relative humiditiy, we osberve a general 
-decrease of RH per pixel during the first few years. Similiar to P, the highest 
+decrease of RH per pixel during the first few years (Fig. \ref{fig:rh_yearly}). Similiar to P, the highest 
 level of RH is reached in 2003 with a mean value of 50%. In 2010 and 2014, we 
 observe RH values below 40%, and in 2012 and 2018 RH reaches only about 42%. 
 With the exception of 2014, we do not see the gravity of the drought years of 
 2008 and 2011 in the dynamic of RH. During most other years RH usually reaches 
 between 43 - 46%, however, in 2015 and 2016 the mean is about 48%, in the same 
 years we also observed relativly high precipitation rates.
+
+```{r rh_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly median of relative humididty [\\%].", dpi=72}
+knitr::include_graphics("../results/plots/RH_yearly.png")
+```
+
+```{r rh_monthly, echo=FALSE, fig.align="center", fig.show="hold", out.width="60%", fig.cap="Boxplots for monthly median relative humidity [\\%].", dpi=72}
+knitr::include_graphics("../results/plots/RH_monthly.png")
+```
+
+
 The intra-annual dynamic of RH follows a very clear seasonal pattern with the 
-lowest RH (~31%) found in the warm summer months June to August. RH is maximized
+lowest RH (~31%) found in the warm summer months June to August (Fig. \ref{fig:rh_monthly}). RH is maximized
 during December to March, with levels between 55 - 58%.
 The spatial pattern of RH shows higher values throught the study area for the 
-first and foruth season. For the second and foruth season, the pattern is very similar
+first and foruth season (Fig. \ref{fig:rh_seasonal}). For the second and foruth season, the pattern is very similar
 with the lowest RH found in the South-East and a positive gradient towards the 
 North-West of the studyarea. However, the values during the second season are 
 substantially lower than compared to the third. Significant linear trends are 
@@ -315,7 +326,7 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P.png")
 ```
 
 _Baseline correlation_
-Areas with missing values are concentrated around the Aral Sea for all seasons. 
+Areas with missing values are concentrated around the Aral Sea for all seasons (Fig. \ref{fig:cor_aod_p}). 
 During the first and third season, the number of missing observations is higher 
 than during the other seasons. For the first season, we observe a pattern of 
 strongly negative correlation in the center of the studyarea and South of the 
@@ -336,7 +347,7 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CER.png")
 
 _Partial Correlation controlling for CER_
 Concerning the spatial distribution of the correlations, the pattern is very 
-similar to the baseline correlation analysis. However, we observe slight increases
+similar to the baseline correlation analysis (Fig. \ref{fig:cor_aod_p_cer}). However, we observe slight increases
 in the amplitute of the signficant negative correlations for the seasons (between
 -0.6 and -0.85).
 
@@ -346,7 +357,7 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P_by_COT.png")
 
 _Partial Correlation controlling for COT_
 The amplitude and spatial distribution is very similar to the preceeding correlation
-analysis. However, for the third and fourth season the total number of significant
+analysis (Fig. \ref{fig:cor_aod_p_cot}). However, for the third and fourth season the total number of significant
 correlations decreases and the comprehensive areas of negative correlations
 are observed to become more patchy.
 
@@ -355,7 +366,7 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CWP.png")
 ```
 
 _Partial Correlation controlling for CWP_
-For CWP again, the main patterns compared to the other analysis do not change. 
+For CWP again, the main patterns compared to the other analysis do not change (Fig. \ref{fig:cor_aod_p_cwp}). 
 However, there seems to be a slight increase in the negative correlations during 
 the fourth season.
 
@@ -364,7 +375,7 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH.png")
 ```
 
 _Partial Correlation controlling for RH_
-When controlling for RH, some changes can be observed. In the first season,
+When controlling for RH, some changes can be observed (Fig. \ref{fig:cor_aod_rh}). In the first season,
 the size of the patch of significant negative correlations around the Aral Sea
 and Aralkum dessert is substantially reduced. The same finding holds true for
 the Norther patch of negative correlations in the third season. In the fourth 
@@ -382,7 +393,7 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png")
 _Partial Correlation controlling for CWP, COT, CWP, and RH_
 When controlling for all variables, the correlations patterns get more patchy during 
 all seasons, which means in large proportions of the studyarea we observe non-significant
-postive and negative correlations in fairly random patterns next to each other.
+postive and negative correlations in fairly random patterns next to each other (Fig. \ref{fig:cor_aod_all}).
 The exceptions are a comprehensive patch of negative correlations in the North 
 of the studyarea in the third season, though its size is substantially reduced
 compared to the baseline analysis, as well as the comprehensive patch
@@ -392,7 +403,7 @@ correlations also seem to decrease in amplitutde.
 
 _Analysis of signficant correlations_
 Figure xx shows the correlations of selected pixels which showed significant correlations
-for all four seasons and based on the controlling scenario. For all seasons and 
+for all four seasons and based on the controlling scenario (Fig. \ref{fig:total_corr}). For all seasons and 
 analysis we observe negative correlations between AOD and P between -0.1 and -0.38.
 The correlation values for the second season are substantially closer to 0 than 
 compared to all other seasons which can be easily explained by the very small number

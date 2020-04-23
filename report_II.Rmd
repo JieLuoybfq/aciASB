@@ -321,12 +321,11 @@ in order to capture the complete time series of the remainng pixels. This areas
 are indicated in grey color in the figures below. 
 
 
-```{r cor_aod_p, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r cor_aod_p, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
 knitr::include_graphics("../results/plots/cor_AOD_550_P.png")
 ```
 
-_Baseline correlation_
-Areas with missing values are concentrated around the Aral Sea for all seasons (Fig. \ref{fig:cor_aod_p}). 
+_Baseline correlation_: Areas with missing values are concentrated around the Aral Sea for all seasons (Fig. \ref{fig:cor_aod_p}). 
 During the first and third season, the number of missing observations is higher 
 than during the other seasons. For the first season, we observe a pattern of 
 strongly negative correlation in the center of the studyarea and South of the 
@@ -341,11 +340,12 @@ not significant. A similar pattern, though larger in size extending to the South
 is observed during the foruth season. These correlations are significant and negative
 an generally between -0.4 and -0.7.
 
-```{r cor_aod_p_cer, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for CER during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r cor_aod_p_cer, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for CER during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CER.png")
 ```
 
 _Partial Correlation controlling for CER_
+
 Concerning the spatial distribution of the correlations, the pattern is very 
 similar to the baseline correlation analysis (Fig. \ref{fig:cor_aod_p_cer}). However, we observe slight increases
 in the amplitute of the signficant negative correlations for the seasons (between
@@ -355,8 +355,7 @@ in the amplitute of the signficant negative correlations for the seasons (betwee
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_COT.png")
 ```
 
-_Partial Correlation controlling for COT_
-The amplitude and spatial distribution is very similar to the preceeding correlation
+_Partial Correlation controlling for COT_: The amplitude and spatial distribution is very similar to the preceeding correlation
 analysis (Fig. \ref{fig:cor_aod_p_cot}). However, for the third and fourth season the total number of significant
 correlations decreases and the comprehensive areas of negative correlations
 are observed to become more patchy.
@@ -366,6 +365,7 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CWP.png")
 ```
 
 _Partial Correlation controlling for CWP_
+
 For CWP again, the main patterns compared to the other analysis do not change (Fig. \ref{fig:cor_aod_p_cwp}). 
 However, there seems to be a slight increase in the negative correlations during 
 the fourth season.
@@ -374,8 +374,7 @@ the fourth season.
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH.png")
 ```
 
-_Partial Correlation controlling for RH_
-When controlling for RH, some changes can be observed (Fig. \ref{fig:cor_aod_rh}). In the first season,
+_Partial Correlation controlling for RH_: When controlling for RH, some changes can be observed (Fig. \ref{fig:cor_aod_rh}). In the first season,
 the size of the patch of significant negative correlations around the Aral Sea
 and Aralkum dessert is substantially reduced. The same finding holds true for
 the Norther patch of negative correlations in the third season. In the fourth 
@@ -390,8 +389,7 @@ increase in amplitude without reaching the level of significance.
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png")
 ```
 
-_Partial Correlation controlling for CWP, COT, CWP, and RH_
-When controlling for all variables, the correlations patterns get more patchy during 
+_Partial Correlation controlling for CWP, COT, CWP, and RH_: When controlling for all variables, the correlations patterns get more patchy during 
 all seasons, which means in large proportions of the studyarea we observe non-significant
 postive and negative correlations in fairly random patterns next to each other (Fig. \ref{fig:cor_aod_all}).
 The exceptions are a comprehensive patch of negative correlations in the North 
@@ -401,9 +399,8 @@ of negative correlations in the Center of the studyarea during the fourth season
 Compared to the analysis controling for RH only, the non-significant positive
 correlations also seem to decrease in amplitutde.
 
-_Analysis of signficant correlations_
-Figure xx shows the correlations of selected pixels which showed significant correlations
-for all four seasons and based on the controlling scenario (Fig. \ref{fig:total_corr}). For all seasons and 
+_Analysis of signficant correlations_: Figure \ref{fig:total_corr} shows the correlations of selected pixels which showed significant correlations
+for all four seasons and based on the controlling scenario. For all seasons and 
 analysis we observe negative correlations between AOD and P between -0.1 and -0.38.
 The correlation values for the second season are substantially closer to 0 than 
 compared to all other seasons which can be easily explained by the very small number

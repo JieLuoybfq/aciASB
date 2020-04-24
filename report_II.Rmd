@@ -3,7 +3,7 @@ output:
   pdf_document:
     includes:
       in_header: import.sty
-      before_body: title_I.sty
+      before_body: title_II.sty
     toc_depth: 3
     number_sections: true
     df_print: kable
@@ -98,7 +98,7 @@ relative humidity to be one of the most important drivers for the observed
 relationship between AOD and rainfall [@Ng2017, 2f.]. When it 
 reaches a certain concentration, it can alter the results of correlation 
 analyses mainly through two effects [@Altaratz2013, 1f.]. First, relative 
-humidity may cause, dependend on the aerosols’ chemical properties, substantial 
+humidity may cause, depending on the aerosols’ chemical properties, substantial 
 growth of the particles in an humid environment [@Carrico2003, 1], 
 leading to coalescence of the droplets [@Ng2017, 2ff.]. This 
 depicts a rather positive relation between the variables 
@@ -123,7 +123,7 @@ low with a mean of about 82.1 $mm/year$ and a maximum during winter [@Gaybull201
 Strong winds are often to be recorded in the study area [@Issanova2015, 3213f.].
 The Aral Sea once has been the fourth largest lake on earth covering a water volume 
 of 1.093 $km^3$ in 1960 [@Gaybull2012, 286]. Since then, it has been gradually 
-shrinking due to overexploitation of its natural resources by water abstraction 
+shrinking due to over-exploitation of its natural resources by water abstraction 
 for irrigation agriculture as well as the impacts of climate change [@Ge2016, 2; @Shen2019, 2031].
 In the year 2003, it finally split into eastern and western parts. 
 The exposed lake bed consists of salt soils and loose sand dunes turning the 
@@ -145,64 +145,64 @@ orbit. It measures solar and thermal radiation in 36 bands in resolutions rangin
 from 250 $m$ to 1 $km$. For this study, daily resolution Level-2 data were used for 
 aerosol (MOD/MYD04) [@Levy2017] and cloud (MOD/MYD06) [@Platnick2017] parameters 
 as well as the corresponding geolocation files (MOD/MYD03) [@Team2012]. For 
-the explanation of the parameter retrival, the reader is refered to the prior seminar
+the explanation of the parameter retrieval, the reader is referred to the prior seminar
 work, as these explanations are not duplicated here, except for the newly included 
 parameters of precipitation and relative humidity.
 
 ### Precipitation
 _Precipitation (P):_ Monthly sums of precipitation are derived from the CHIRPS
-dataset. This dataset is established by taking long-term monthly average data
+data set. This data set is established by taking long-term monthly average data
 from ground stations in conjunction with observations from five satellite missions
 to establish a local regression model with a moving window for each grid cell of
 0.05° in size [@Funk2015, 3f.]. The independent variables in the local regressions
-consist always of the longitude and latidue information as well as one to three additional
-variables representing either the local elevation, the slope or satelite observations.
+consist always of the longitude and latitude information as well as one to three additional
+variables representing either the local elevation, the slope or satellite observations.
 Potential residuals in comparison to the FAO climate normals are interpolated
 using inverse distance weighting and are than added to the local estimates [@Funk2015, 3].
 In a last step, for every pixel the five nearest ground stations are used to apply
-another inverse distance weighting algorithm. Here, an estimate of the decorrelation slope
-from the predicted precipitation and the observed precipitation at the neighbouring stations
+another inverse distance weighting algorithm. Here, an estimate of the decor-relation slope
+from the predicted precipitation and the observed precipitation at the neighboring stations
 are used to calculated a weighted average [@Funk2015, 3].
 
 ### Relative Humidity
-_Relative Humidity (RH):_ RH is retrived using the ERA-5 reanalysis dataset processed by
+_Relative Humidity (RH):_ RH is retrieved using the ERA-5 reanalysis data set processed by
 the European Centre for Medium-Range Weather Forecasts (ECMWF) [@Forecasts2017]. 
-This dataset combines observations and model predictions to get a comprehensive 
-model of global atmospheric conditions at small time steps and a nominal resoultion
+This data set combines observations and model predictions to get a comprehensive 
+model of global atmospheric conditions at small time steps and a nominal resolution
 of 31km at the ground, however the data has been regridded to 0.25°. The atmosphere 
 is modeled in 137 vertical levels from the surface to 1 Pa. Here, we used the 
 monthly aggregates of RH only for the first seven atmospheric layers (1000 hPa - 850 hPa) 
-since the other datasets were also summarized to monthly aggregates. 850 Pa was 
-considered an appropiate height level, since local aerosol trasnports in the region
+since the other data sets were also summarized to monthly aggregates. 850 Pa was 
+considered an appropriate height level, since local aerosol transports in the region
 are merely reported to be found above 5 km in height [@Chen2013]. 
 
 ## Methodology
-AOD and the cloud parameters were extracted from the respective MODIS datasets 
+AOD and the cloud parameters were extracted from the respective MODIS data sets 
 using the HEG-Tool (HDF-EOS To GeoTIFF Conversion Tool). It enables a selection of the 
 cloud and aerosol properties clipping the data directly to the area of interest which 
 is leaned on the shape of the study area used by [@Ge2016]. The cloud parameters
-(at 6km nominal resoultion) were resampled to the 10km nominal resoultion of the AOD
-dataset. 
+(at 6km nominal resolution) were resampled to the 10km nominal resolution of the AOD
+data set. 
 The observations of single MODIS overflights were then aggregated to a monthly 
 temporal-resolution, and means were calculated for four different seasons 
-(Spring: March, April, May; Summer: June, July, August; Autumn: September, October, 
-November; Winter: December, January, February) 
+(Spring: March, April, May (MAM); Summer: June, July, August (JJA); Autumn: September, October, 
+November (SON); Winter: December, January, February (DJJ)) 
 for every year between 2003 to 2018.
 
-The CHIRPS dataset already represents monthly aggregates. The cell values were resampled
-to the 10km resoultion of the MODIS data and seasonal aggregates were calculated as described
+The CHIRPS data set already represents monthly aggregates. The cell values were resampled
+to the 10km resolution of the MODIS data and seasonal aggregates were calculated as described
 above. For RH, the process was basically identical, except that the median was 
-calculated across the seven vertival layers, before the data was resampled to the 
-same resoultion as the other datasets.
+calculated across the seven vertical layers, before the data was resampled to the 
+same resolution as the other data sets.
 
 To retrieve the correlation between AOD and P and to generate insights to the underlying
 processes we conduct a number of correlation analysis between these two parameters,
-while eleminating the influence of cloud parameteres and RH. For this approach,
-we firstly cheked if the data fullfills the assumptions to calcualte Pearsons correlation.
-All variables are continous in form. Pearsons correlation additionally is sensitive
-for outliers. Similiarily to other studys we thus excluded exceptional high AOD values
+while eliminating the influence of cloud parameters and RH. For this approach,
+we firstly checked if the data fulfills the assumptions to calculate Pearson's correlation.
+All variables are continuous in form. Pearson's correlation additionally is sensitive
+for outliers. Similarly to other studies we thus excluded exceptional high AOD values
 above 0.3. Also, we assume linear relationships between the variables for values below the 
-AOD threshold of 0.3. We then calculated the correlation coefficient betwenn AOD and P
+AOD threshold of 0.3. We then calculated the correlation coefficient between AOD and P
 while controlling for any other variable. This is achieved by calculating the partial correlation. 
 Partial correlation is used as a measure of the linear dependence between two variables 
 while controlling for the influences of a third.
@@ -212,8 +212,8 @@ proportion of variance which cannot be explained by the control variable is subj
 correlation analysis [@Salkind2010].
 This approach has been chosen by a number of recent studies investigating relationships
 between aerosols and cloud microphysics as well as precipitations and seems reasonable to 
-achive both, investigating the "true" realtionship between AOD and P in a complex field
-of interviening processes and effects and to deliver indications for the dominant processes
+achieve both, investigating the "true" relationship between AOD and P in a complex field
+of intervening processes and effects and to deliver indications for the dominant processes
 driving this relationship [@Engstrom2010; @Gryspeerdt2014; @Ng2017].
 
 The results of this analysis are presented on a pixel basis for each season to 
@@ -233,14 +233,15 @@ and RH.
 
 _Temporal and spatial dynamics for P_
 During the time series under study (2003 - 2018) we can observe a varying 
-pattern for precipitation (Fig. \ref{fig:prec_yearly}). In 2003 we observe relativly high 
+pattern for precipitation (Fig. \ref{fig:prec_yearly}). In 2003 we observe relatively high 
 precipitation rates with an average above 200 mm per pixel and a median even 
-slightly higher than the mean. This amount of high precipitation rates from the 
+slightly higher than the mean, which is in accordance with another study reporting
+2003 as a very-wet year in Central Asia [@Xu2016]. This amount of high precipitation rates from the 
 year 2003 is not reached again during the time series, instead most of the years 
 indicate a mean value of precipitation below 150 mm per pixel. The years 2008, 
-2011, and 2014 show exceptional low precipitation which is in accordance with 
-other studies which report this years as being drought years in Central Asia 
-[@Quelle]. In 2015 and 2016 precipitation is higher than during the other years, 
+2011, and 2014 show exceptional low precipitation, which are note completely
+in line with the findings of @Xu2016, indicating 2006, 2008 and 2011 as severe 
+drought years. In 2015 and 2016 precipitation is higher than during the other years, 
 however the high precipitation rate of 2003 is not reached.
 
 
@@ -256,37 +257,37 @@ knitr::include_graphics("../results/plots/P_monthly.png")
 
 Concerning the intra-annual pattern of precipitation, we observe the highest 
 rates in March and April as well as another peak during November and December of
-about 19 mm per pixel (Fig. \ref{fig:prec_monthly}). During the summer months of July to September we observe 
-the lowest precipitation rates with means about 5 mm. The seasonality of 
-precipitation is thus clearly visible and is in accordance with the seasonal 
-divison we chose here for our analysis.
+about 19 mm per pixel (Fig. \ref{fig:prec_monthly}). During the summer months of 
+July to September we observe the lowest precipitation rates with means about 5 mm. 
+The seasonality of precipitation is thus clearly visible and is in accordance with 
+the seasonal division we chose here for our analysis.
 
-```{r p_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for P for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r p_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for P for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/seasonal_means_P.png")
 ```
 
 The spatial pattern of P shows that higher precipitation rates are found above
-the Aral Sea and Aralkum dessert (Fig. \ref{fig:p_seasonal}) as well as in the South-East of the 
-study area during the first and fourth season. The second and third season are
-charchterized by very low precipitation rates, especially in the South of the 
-study area. The linear trend analysis indicates significant linear trends only 
-during the first season in the South-East of the study area. Here, moderate
-to high negative slopes seem to dominate the trend (about -2 to -5 mm/year). 
+the Aral Sea and Aralkum dessert (Fig. \ref{fig:p_seasonal}) as well as in the 
+South-East of the study area during the first and fourth season. The second and 
+third season are characterized by very low precipitation rates, especially in 
+the South of the study area. The linear trend analysis indicates significant 
+linear trends only during the first season in the South-East of the study area. 
+Here, moderate to high negative slopes seem to dominate the trend (about -2 to -5 mm/year). 
 During the second season we also observe moderate to high decrease of precipitation
-rate close to the Aral Sea and its Northern neighbourhood. During the third and
-fourth season we barley observe patterns of significan linear trends. 
+rate close to the Aral Sea and its Northern neighborhood. During the third and
+fourth season we barley observe patterns of significant linear trends. 
 
 
 
 _Temporal and spatial dynamics for RH_
-Concerning the inter-annual dynamic of relative humiditiy, we osberve a general 
-decrease of RH per pixel during the first few years (Fig. \ref{fig:rh_yearly}). Similiar to P, the highest 
-level of RH is reached in 2003 with a mean value of 50%. In 2010 and 2014, we 
-observe RH values below 40%, and in 2012 and 2018 RH reaches only about 42%. 
-With the exception of 2014, we do not see the gravity of the drought years of 
-2008 and 2011 in the dynamic of RH. During most other years RH usually reaches 
-between 43 - 46%, however, in 2015 and 2016 the mean is about 48%, in the same 
-years we also observed relativly high precipitation rates.
+Concerning the inter-annual dynamic of relative humidity, we observe a general 
+decrease of RH per pixel during the first few years (Fig. \ref{fig:rh_yearly}). 
+Similar to P, the highest level of RH is reached in 2003 with a mean value of 
+50%. In 2010 and 2014, we observe RH values below 40%, and in 2012 and 2018 RH 
+reaches only about 42%. With the exception of 2014, we do not see the gravity of 
+the drought years of 2008 and 2011 in the dynamic of RH. During most other years 
+RH usually reaches between 43 - 46%, however, in 2015 and 2016 the mean is about 
+48%, in the same years we also observed relatively high precipitation rates.
 
 ```{r rh_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly median of relative humididty [\\%].", dpi=72}
 knitr::include_graphics("../results/plots/RH_yearly.png")
@@ -298,122 +299,129 @@ knitr::include_graphics("../results/plots/RH_monthly.png")
 
 
 The intra-annual dynamic of RH follows a very clear seasonal pattern with the 
-lowest RH (~31%) found in the warm summer months June to August (Fig. \ref{fig:rh_monthly}). RH is maximized
-during December to March, with levels between 55 - 58%.
-The spatial pattern of RH shows higher values throught the study area for the 
-first and foruth season (Fig. \ref{fig:rh_seasonal}). For the second and foruth season, the pattern is very similar
-with the lowest RH found in the South-East and a positive gradient towards the 
-North-West of the studyarea. However, the values during the second season are 
-substantially lower than compared to the third. Significant linear trends are 
-only found during the second season South of the Aral Sea. Here, low negative
-slopes dominate the trend (about -0.3%/year).
+lowest RH (~31%) found in the warm summer months June to August 
+(Fig. \ref{fig:rh_monthly}). RH is maximized during December to March, with levels 
+between 55 - 58%. The spatial pattern of RH shows higher values through the 
+study area for the first and fourth season (Fig. \ref{fig:rh_seasonal}). For 
+the second and fourth season, the pattern is very similar with the lowest RH 
+found in the South-East and a positive gradient towards the North-West of the 
+study area. However, the values during the second season are substantially lower 
+than compared to the third. Significant linear trends are only found during the 
+second season South of the Aral Sea. Here, low negative slopes dominate the trend 
+(about -0.3%/year).
 
-```{r rh_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for RH for spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r rh_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for RH for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/seasonal_means_RH.png")
 ```
 
 ## Correlation analysis between AOD and P
 As indicated in the methods section, we analysed the partial correlation between
 AOD and P controlling for three parameters of cloud microphysics and RH. As a 
-baseline we also calculated the correlation without any controling variable. We 
+baseline we also calculated the correlation without any controlling variable. We 
 excluded all pixels for which there were no observations in AOD at any time step
-in order to capture the complete time series of the remainng pixels. This areas
+in order to capture the complete time series of the remaining pixels. This areas
 are indicated in grey color in the figures below. 
 
 
-```{r cor_aod_p, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r cor_aod_p, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/cor_AOD_550_P.png")
 ```
 
-_Baseline correlation_: Areas with missing values are concentrated around the Aral Sea for all seasons (Fig. \ref{fig:cor_aod_p}). 
-During the first and third season, the number of missing observations is higher 
-than during the other seasons. For the first season, we observe a pattern of 
-strongly negative correlation in the center of the studyarea and South of the 
-Aral Sea. We also observe some, though non-significant, positive correlations in
-the North and the far South-East of the studyarea. During the second season,
-there are only very few locations with significant correlations. In general, the
-picture is very patchy with positive and negative correlations distrubted fairly
-random in the studyarea, especially next to the Aral Sea. In the third season we
-observe a comprehensive patch of negative correlations in the North of the studyarea
-and positive correlations in the South. However, the positive correlations are 
-not significant. A similar pattern, though larger in size extending to the South
-is observed during the foruth season. These correlations are significant and negative
-an generally between -0.4 and -0.7.
+_Baseline correlation_: Areas with missing values are concentrated around the Aral 
+Sea for all seasons (Fig. \ref{fig:cor_aod_p}). During the first and third season, 
+the number of missing observations is higher than during the other seasons. For 
+the first season, we observe a pattern of strongly negative correlation in the 
+center of the study area and South of the Aral Sea. We also observe some, though 
+non-significant, positive correlations in the North and the far South-East of the 
+study area. During the second season, there are only very few locations with 
+significant correlations. In general, the picture is very patchy with positive 
+and negative correlations distributed fairly random in the study area, especially 
+next to the Aral Sea. In the third season we observe a comprehensive patch of 
+negative correlations in the North of the study area and positive correlations 
+in the South. However, the positive correlations are not significant. A similar 
+pattern, though larger in size extending to the South is observed during the 
+fourth season. These correlations are significant and negative and generally 
+between -0.4 and -0.7.
 
-```{r cor_aod_p_cer, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for CER during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r cor_aod_p_cer, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for CER for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CER.png")
 ```
 
 _Partial Correlation controlling for CER_
 
 Concerning the spatial distribution of the correlations, the pattern is very 
-similar to the baseline correlation analysis (Fig. \ref{fig:cor_aod_p_cer}). However, we observe slight increases
-in the amplitute of the signficant negative correlations for the seasons (between
--0.6 and -0.85).
+similar to the baseline correlation analysis (Fig. \ref{fig:cor_aod_p_cer}). 
+However, we observe slight increases in the amplitude of the significant negative
+correlations for the seasons (between -0.6 and -0.85).
 
-```{r cor_aod_p_cot, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for COT during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r cor_aod_p_cot, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for COT for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_COT.png")
 ```
 
-_Partial Correlation controlling for COT_: The amplitude and spatial distribution is very similar to the preceeding correlation
-analysis (Fig. \ref{fig:cor_aod_p_cot}). However, for the third and fourth season the total number of significant
+_Partial Correlation controlling for COT_: The amplitude and spatial 
+distribution is very similar to the preceding correlation
+analysis (Fig. \ref{fig:cor_aod_p_cot}). However, for the third and fourth 
+season the total number of significant
 correlations decreases and the comprehensive areas of negative correlations
 are observed to become more patchy.
 
-```{r cor_aod_p_cwp, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for CWP during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r cor_aod_p_cwp, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for CWP for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CWP.png")
 ```
 
 _Partial Correlation controlling for CWP_
 
-For CWP again, the main patterns compared to the other analysis do not change (Fig. \ref{fig:cor_aod_p_cwp}). 
-However, there seems to be a slight increase in the negative correlations during 
-the fourth season.
+For CWP again, the main patterns compared to the other analysis do not change 
+(Fig. \ref{fig:cor_aod_p_cwp}). However, there seems to be a slight increase in 
+the negative correlations during the fourth season.
 
-```{r cor_aod_rh, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for RH during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r cor_aod_rh, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for RH for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH.png")
 ```
 
-_Partial Correlation controlling for RH_: When controlling for RH, some changes can be observed (Fig. \ref{fig:cor_aod_rh}). In the first season,
+_Partial Correlation controlling for RH_: When controlling for RH, some changes 
+can be observed (Fig. \ref{fig:cor_aod_rh}). In the first season,
 the size of the patch of significant negative correlations around the Aral Sea
 and Aralkum dessert is substantially reduced. The same finding holds true for
 the Norther patch of negative correlations in the third season. In the fourth 
 season, directly North of the Aral Sea, we observe fewer significant negative 
-correlations, however, the comprehensive patch in the Center of the studyarea
+correlations, however, the comprehensive patch in the Center of the study area
 can still be observed. In general, when controlling for RH, there seems to be 
 a shift into the direction of positive correlations, because the positive correlations
 increase in amplitude without reaching the level of significance.
 
 
-```{r cor_aod_all, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for all other variables during spring (a), summer (b), autumn (c), and winter (d).", dpi=72}
+```{r cor_aod_all, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for all other variables for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png")
 ```
 
-_Partial Correlation controlling for CWP, COT, CWP, and RH_: When controlling for all variables, the correlations patterns get more patchy during 
-all seasons, which means in large proportions of the studyarea we observe non-significant
-postive and negative correlations in fairly random patterns next to each other (Fig. \ref{fig:cor_aod_all}).
+_Partial Correlation controlling for CWP, COT, CWP, and RH_: When controlling for 
+all variables, the correlations patterns get more patchy for every season, 
+which means that in large proportions of the study area we observe non-significant
+positive and negative correlations in fairly random patterns next to each other (Fig. \ref{fig:cor_aod_all}).
 The exceptions are a comprehensive patch of negative correlations in the North 
-of the studyarea in the third season, though its size is substantially reduced
+of the study area in the third season, though its size is substantially reduced
 compared to the baseline analysis, as well as the comprehensive patch
-of negative correlations in the Center of the studyarea during the fourth season.
-Compared to the analysis controling for RH only, the non-significant positive
-correlations also seem to decrease in amplitutde.
+of negative correlations in the Center of the study area during the fourth season.
+Compared to the analysis controlling for RH only, the non-significant positive
+correlations also seem to decrease in amplitude.
 
-_Analysis of signficant correlations_: Figure \ref{fig:total_corr} shows the correlations of selected pixels which showed significant correlations
+_Analysis of significant correlations_: Figure \ref{fig:total_corr} shows the 
+correlations of selected pixels which showed significant correlations
 for all four seasons and based on the controlling scenario. For all seasons and 
 analysis we observe negative correlations between AOD and P between -0.1 and -0.38.
 The correlation values for the second season are substantially closer to 0 than 
 compared to all other seasons which can be easily explained by the very small number
-of pixels which showed significant correlations during this seasons. Thus, the 
-results for the second season are omitted hereafter.
+of pixels which showed significant correlations during this seasons and the general
+very low precipitation rates during this season.
 For the first and third season, controlling for parameters of cloud microphysics
 seem to increase the negative correlations compared to the baseline analysis while
-controling for RH delivers smaller correlations. This observations is not valid 
+controlling for RH delivers smaller correlations values. This observations does not hold
 for the fourth season, where controlling for RH increases the correlation 
-coefficient, while controling for cloud microphysics shows little to no effects.
+coefficient, while controlling for cloud microphysics shows little to no effects.
 When all variables are controlled for, we observe no effects on the correlation 
-coefficient for the first and fourth season. In the third season, conrolling
-for all variables together decreases the coefficient from -0.38 to -0.28.
+coefficient for the first and fourth season. In the third season, controlling
+for all variables decreases the coefficient from -0.38 to -0.28.
 
 ```{r total_corr, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Correlation coefficients for all pixels with significant correlations by season.", dpi = 72}
 knitr::include_graphics("../results/plots/totalCorr.png")

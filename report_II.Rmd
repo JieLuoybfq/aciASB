@@ -430,7 +430,99 @@ knitr::include_graphics("../results/plots/totalCorr.png")
 
 # Discussion
 
+The results show the absence of a linear trend for the precipitation rates and 
+the relative humidity. Otherwise, a distinct seasonal pattern which is coinciding 
+between both parameters can be assumed. High moisture is accompanied by 
+precipitation maxima in spring and winter, especially north of the study area 
+and around the Aral Sea. This depicts a high spatial variability with a 
+confirmation of the assumptions made before concerning the hydrological cycle 
+for Central Asia [@Li2018, 2f.]. 
+
+Beyond that, the relationship between AOD and precipitation controlled for cloud 
+microphysical parameters as well as the relative humidity were analysed. 
+Depending on the seasons, the correlation analyses imply the existence of 
+diverging effects. Over all seasons, primary negative correlations turn out to 
+be significant with a medium to high strength. In general, this contradicts the 
+hypotheses of hygroscopic growth in the region which would lead to a strong 
+positive relationship [@Ng2017, 10ff.]. Instead, other effects seem to dominate the 
+existing relationship. In spring, low AOD values correlate with high precipitation rates. 
+When using the cloud microphysics as a control variable, this pattern is not 
+changed. Contrary, building the partial correlation with RH 
+inverts the direction of the correlation. This corresponds with other studies’ 
+findings about a wet scavenging effect in Central Asia during wet seasons [@Grandey2014, 5682f.]. 
+
+In summer, the very low precipitation rates (<5mm) prevent the formation of 
+distinct effects between aerosols and rainfall rates. As a result, only scattered 
+patches of correlations occur. In autumn, the dry conditions attenuate the 
+precipitation rates in September, thus influencing possible the outcome of the 
+correlation analysis. In the north of the study area, negative correlations appear. 
+The partial correlation analysis reveals that here RH is not the primary driver. 
+Also, a direct influence of the depicted cloud microphysics cannot be assumed. 
+Instead, the effects may originate from unknown effects, like meteorological 
+parameters or satellite retrieval biases [@Ng2017, 11.]. 
+
+In winter, a similarly strong patch of negative correlations is visible in the 
+northern parts of the study area, which prevails when controlling for other 
+parameters. This finding implies, that it is not the impact of one of the 
+investigated parameters primary dominating the correlation analysis. Only a 
+small portion around the northern edge of the Aral Sea pictures RH to be a 
+primary driver, because we observe the change from negative to positive correlations. 
+The analysis indicates a highly temporal variety of effects between the seasons 
+as well as spatial diverse formations within the study area. 
+Depending on spatio-temporal conditions the relationship between aerosol 
+concentration and precipitation patterns is driven by different parameters. 
+In months with a high moisture, relating effects arise [@Altaratz2013, 4f.]. 
+Wet scavenging as described by @Grandey2014 may play a major role in parts of 
+the study area and can form an aerosol sink, leading to positive correlations 
+when it is accounted for RH. In contrast, the characteristics of the aerosols 
+may suppress hygroscopic growth, leading to negative correlations. 
+
+In regards to the aerosol type, these effects could be attributed to the 
+dominance of mineral aerosols, but an comprehensive analysis is not feasible 
+with the data at hand [@Altaratz2013, 4f.]. Dry conditions during some seasons 
+promote ambiguous effects which cannot be traced back to the investigated 
+parameters alone. However, RH seems to be one of the main drivers of the 
+aerosol-rainfall relationship. Accounting for RH, reveals rather positive 
+correlations between AOD and precipitation in wet conditions during spring, 
+while the contrary is observed during winter. Thus, the relationship between 
+aerosol and precipitation data imply a rainfall suppression in some locations 
+during some seasons, but these findings are not adequately pictured in the 
+correlation to cloud properties (the reader is referred to our previous seminar work). 
+It remains unknown whether indirect aerosol effects like the suppression of precipitation 
+in context to the Twomey- or Albrecht-effect occur in the study area. 
+As a result, the study’s hypotheses can be neither confirmed not denied. 
+Instead, a more detailed analysis would provide deeper insights into ongoing 
+processes not just for the aerosol-cloud interactions but also for the relationship 
+to the precipitation patterns [@Ng2017, 11f.]. First, the choice of seasons is not 
+ideal for the study area due to a big inter-annual variance in moisture. 
+Regardless of the division, months with relatively high and low values may be 
+sampled within the same seasons. Second, an additional source of error may be 
+the existence of a large-scale meteorological variability [@Altaratz2013, 4f.]. 
+Especially in data sparse regions, a higher resolution for observing meteorological 
+parameters, such as precipitation, could enhance the knowledge of the ongoing processes. 
+In the context of satellite retrieval bias, failed data acquisition or 
+data inhomogeneity, further evaluation is necessary in semi-arid and arid regions [@Grandey2014, 5683]. 
+Nonetheless, first results for the hydrological cycle can be derived. 
+Wet-scavenging as well as interactions of aerosols with cloud microphysics can 
+lead to changes in the relationship between aerosols and precipitation. 
+However, the effects vary in time and space, leading to either precipitation 
+enhancement or suppression. Tracking of the aerosols’ origin in addition to an 
+analysis of the vertical structure and aerosol type can ensure more reliable results [@Sharif2015, 660ff.].
+
 # Conclusion
+
+The subsequent analysis of hydrological connectivity to the aerosol characteristics 
+enhances the demand for further investigations in this field of interest. An 
+adequate quantification of ongoing processes is even more complex than it was 
+thought to be, resulting from technological issues as well as natural mechanisms 
+which tend to overlay each other and promote distortion of each other’s effects. 
+Thus, answering the question of the strength and direction of relationship between 
+aerosol and precipitation properties is aggravated. The study implies the existence 
+of moisture related processes like wet scavenging but also the suppression of 
+drizzle due to aerosol-cloud interactions. Therefore, only a temporal and spatial 
+approximation of effects in the Aral Sea region can be gathered from the data. 
+Further research in this highly vulnerable environment is crucial for assessing 
+the situation with reliable insights. 
 
 # References
 

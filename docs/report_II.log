@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.12)  24 APR 2020 15:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.12)  25 APR 2020 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1190,7 +1190,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 <../results/plots/aral_aoi.png, id=147, 7031.26875pt x 4786.88374pt>
 File: ../results/plots/aral_aoi.png Graphic file (type png)
 <use ../results/plots/aral_aoi.png>
-Package pdftex.def Info: ../results/plots/aral_aoi.png  used on input line 282.
+Package pdftex.def Info: ../results/plots/aral_aoi.png  used on input line 281.
 
 (pdftex.def)             Requested size: 328.73161pt x 223.8003pt.
 [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
@@ -1198,57 +1198,58 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.325 
-       <../results/plots/aral_aoi.png>] [4] [5]
-<../results/plots/P_yearly.png, id=171, 1445.4pt x 722.7pt>
+l.312 
+       <../results/plots/aral_aoi.png>] [4]
+<../results/plots/P_yearly.png, id=166, 1445.4pt x 722.7pt>
 File: ../results/plots/P_yearly.png Graphic file (type png)
 <use ../results/plots/P_yearly.png>
-Package pdftex.def Info: ../results/plots/P_yearly.png  used on input line 427.
+Package pdftex.def Info: ../results/plots/P_yearly.png  used on input line 407.
 
 (pdftex.def)             Requested size: 375.79514pt x 187.89757pt.
-<../results/plots/P_monthly.png, id=172, 505.89pt x 433.62pt>
+[5]
+<../results/plots/P_monthly.png, id=173, 505.89pt x 433.62pt>
 File: ../results/plots/P_monthly.png Graphic file (type png)
 <use ../results/plots/P_monthly.png>
-Package pdftex.def Info: ../results/plots/P_monthly.png  used on input line 436
+Package pdftex.def Info: ../results/plots/P_monthly.png  used on input line 416
 .
 (pdftex.def)             Requested size: 281.86067pt x 241.59488pt.
+<../results/plots/seasonal_means_P.png, id=175, 2631.8325pt x 1863.96375pt>
+File: ../results/plots/seasonal_means_P.png Graphic file (type png)
+<use ../results/plots/seasonal_means_P.png>
+Package pdftex.def Info: ../results/plots/seasonal_means_P.png  used on input l
+ine 433.
+(pdftex.def)             Requested size: 281.8322pt x 199.60426pt.
 [6pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.442 
-       <../results/plots/P_yearly.png (PNG copy)>]
-<../results/plots/seasonal_means_P.png, id=179, 5263.665pt x 3726.92375pt>
-File: ../results/plots/seasonal_means_P.png Graphic file (type png)
-<use ../results/plots/seasonal_means_P.png>
-Package pdftex.def Info: ../results/plots/seasonal_means_P.png  used on input l
-ine 453.
-(pdftex.def)             Requested size: 281.8322pt x 199.55052pt.
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
+l.439 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.439 
+       <../results/plots/P_yearly.png (PNG copy)> <../results/plots/P_monthly.p
+ng (PNG copy)>]
+<../results/plots/RH_yearly.png, id=182, 1445.4pt x 722.7pt>
+File: ../results/plots/RH_yearly.png Graphic file (type png)
+<use ../results/plots/RH_yearly.png>
+Package pdftex.def Info: ../results/plots/RH_yearly.png  used on input line 466
+.
+(pdftex.def)             Requested size: 375.79514pt x 187.89757pt.
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.472 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.472 
-       <../results/plots/P_monthly.png (PNG copy)> <../results/plots/seasonal_m
-eans_P.png>]
-<../results/plots/RH_yearly.png, id=187, 1445.4pt x 722.7pt>
-File: ../results/plots/RH_yearly.png Graphic file (type png)
-<use ../results/plots/RH_yearly.png>
-Package pdftex.def Info: ../results/plots/RH_yearly.png  used on input line 486
-.
-(pdftex.def)             Requested size: 375.79514pt x 187.89757pt.
+       <../results/plots/seasonal_means_P.png>]
 <../results/plots/RH_monthly.png, id=188, 505.89pt x 433.62pt>
 File: ../results/plots/RH_monthly.png Graphic file (type png)
 <use ../results/plots/RH_monthly.png>
-Package pdftex.def Info: ../results/plots/RH_monthly.png  used on input line 49
+Package pdftex.def Info: ../results/plots/RH_monthly.png  used on input line 47
 5.
 (pdftex.def)             Requested size: 281.86067pt x 241.59488pt.
 [8pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
@@ -1256,145 +1257,136 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.501 
-       <../results/plots/RH_yearly.png (PNG copy)>]
-<../results/plots/seasonal_means_RH.png, id=195, 5275.71pt x 3734.95375pt>
+l.494 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.494 
+       <../results/plots/RH_yearly.png (PNG copy)> <../results/plots/RH_monthly
+.png (PNG copy)>]
+<../results/plots/seasonal_means_RH.png, id=195, 2637.855pt x 1867.97874pt>
 File: ../results/plots/seasonal_means_RH.png Graphic file (type png)
 <use ../results/plots/seasonal_means_RH.png>
 Package pdftex.def Info: ../results/plots/seasonal_means_RH.png  used on input 
-line 517.
-(pdftex.def)             Requested size: 281.83311pt x 199.52455pt.
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
+line 497.
+(pdftex.def)             Requested size: 281.83311pt x 199.57817pt.
+<../results/plots/cor_AOD_550_P.png, id=196, 3534.20375pt x 2517.405pt>
+File: ../results/plots/cor_AOD_550_P.png Graphic file (type png)
+<use ../results/plots/cor_AOD_550_P.png>
+Package pdftex.def Info: ../results/plots/cor_AOD_550_P.png  used on input line
+ 518.
+(pdftex.def)             Requested size: 305.33772pt x 217.49133pt.
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.523 
-       <../results/plots/RH_monthly.png (PNG copy)>]
-<../results/plots/cor_AOD_550_P.png, id=200, 7068.4075pt x 5034.81pt>
-File: ../results/plots/cor_AOD_550_P.png Graphic file (type png)
-<use ../results/plots/cor_AOD_550_P.png>
-Package pdftex.def Info: ../results/plots/cor_AOD_550_P.png  used on input line
- 538.
-(pdftex.def)             Requested size: 305.33772pt x 217.49133pt.
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.544 
+l.524 
        <../results/plots/seasonal_means_RH.png>]
-<../results/plots/cor_AOD_550_P_by_CER.png, id=209, 7062.385pt x 5045.85126pt>
+<../results/plots/cor_AOD_550_P_by_CER.png, id=204, 3531.1925pt x 2523.4275pt>
 File: ../results/plots/cor_AOD_550_P_by_CER.png Graphic file (type png)
 <use ../results/plots/cor_AOD_550_P_by_CER.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_CER.png  used on inp
-ut line 565.
-(pdftex.def)             Requested size: 305.29309pt x 218.12227pt.
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+ut line 544.
+(pdftex.def)             Requested size: 305.29309pt x 218.16566pt.
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.571 
+l.550 
        <../results/plots/cor_AOD_550_P.png>]
-<../results/plots/cor_AOD_550_P_by_COT.png, id=216, 7073.42625pt x 5029.79124pt
->
+<../results/plots/cor_AOD_550_P_by_COT.png, id=212, 3537.215pt x 2515.3975pt>
 File: ../results/plots/cor_AOD_550_P_by_COT.png Graphic file (type png)
 <use ../results/plots/cor_AOD_550_P_by_COT.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_COT.png  used on inp
-ut line 582.
-(pdftex.def)             Requested size: 305.23071pt x 217.0443pt.
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ut line 561.
+(pdftex.def)             Requested size: 305.328pt x 217.12599pt.
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.567 
+       <../results/plots/cor_AOD_550_P_by_CER.png>]
+<../results/plots/cor_AOD_550_P_by_CWP.png, id=219, 3523.1625pt x 2520.41624pt>
+
+File: ../results/plots/cor_AOD_550_P_by_CWP.png Graphic file (type png)
+<use ../results/plots/cor_AOD_550_P_by_CWP.png>
+Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_CWP.png  used on inp
+ut line 577.
+(pdftex.def)             Requested size: 305.29771pt x 218.40529pt.
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.588 
-       <../results/plots/cor_AOD_550_P_by_CER.png>]
-<../results/plots/cor_AOD_550_P_by_CWP.png, id=223, 7046.325pt x 5040.8325pt>
-File: ../results/plots/cor_AOD_550_P_by_CWP.png Graphic file (type png)
-<use ../results/plots/cor_AOD_550_P_by_CWP.png>
-Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_CWP.png  used on inp
-ut line 598.
-(pdftex.def)             Requested size: 305.24396pt x 218.36682pt.
-[13pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
-) has been already used, duplicate ignored
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.607 F
-       or CWP again, the main patterns compared to the other analysis do notpdf
-TeX warning (ext4): destination with the same identifier (name{figure.11}) has 
-been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.607 F
-       or CWP again, the main patterns compared to the other analysis do not <.
-./results/plots/cor_AOD_550_P_by_COT.png> <../results/plots/cor_AOD_550_P_by_CW
-P.png>]
-<../results/plots/cor_AOD_550_P_by_RH.png, id=231, 7073.42625pt x 5045.85126pt>
-
+l.588 
+       <../results/plots/cor_AOD_550_P_by_COT.png> <../results/plots/cor_AOD_55
+0_P_by_CWP.png>]
+<../results/plots/cor_AOD_550_P_by_RH.png, id=227, 3537.215pt x 2523.4275pt>
 File: ../results/plots/cor_AOD_550_P_by_RH.png Graphic file (type png)
 <use ../results/plots/cor_AOD_550_P_by_RH.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_RH.png  used on inpu
-t line 613.
-(pdftex.def)             Requested size: 305.23071pt x 217.7373pt.
-<../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png, id=233, 7062.385pt x 498
-5.62625pt>
+t line 591.
+(pdftex.def)             Requested size: 305.328pt x 217.81912pt.
+<../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png, id=229, 3526.17375pt x 2
+528.44624pt>
 File: ../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png Graphic file (type p
 ng)
 <use ../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png  
-used on input line 635.
-(pdftex.def)             Requested size: 305.29309pt x 215.51886pt.
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+used on input line 612.
+(pdftex.def)             Requested size: 305.28963pt x 218.90822pt.
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.641 
-       <../results/plots/cor_AOD_550_P_by_RH.png>] [15pdfTeX warning (ext4): de
-stination with the same identifier (name{figure.13}) has been already used, dup
-licate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.673 
-       <../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png>]
-<../results/plots/totalCorr.png, id=246, 785.0931pt x 499.8675pt>
+l.618 
+       <../results/plots/cor_AOD_550_P_by_RH.png>]
+<../results/plots/totalCorr.png, id=237, 836.1639pt x 499.8675pt>
 File: ../results/plots/totalCorr.png Graphic file (type png)
 <use ../results/plots/totalCorr.png>
-Package pdftex.def Info: ../results/plots/totalCorr.png  used on input line 676
+Package pdftex.def Info: ../results/plots/totalCorr.png  used on input line 650
 .
-(pdftex.def)             Requested size: 305.34651pt x 194.41362pt.
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+(pdftex.def)             Requested size: 305.33125pt x 182.5302pt.
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.721 
-       <../results/plots/totalCorr.png (PNG copy)>] [17] [18] [19]
-Overfull \hbox (35.00185pt too wide) in paragraph at lines 897--902
-\T1/lmr/m/n/10 (-20) MODIS Adap-tive Pro-cess-ing Sys-tem, God-dard Space Fligh
-t Cen-ter. []https://doi.org/10.5067/MODIS/MOD04_L2.061;
- []
+l.656 
+       <../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png>] [15pdfTeX warnin
+g (ext4): destination with the same identifier (name{figure.14}) has been alrea
+dy used, duplicate ignored
 
-[20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 963.
-[21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 963.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.707 
+       <../results/plots/totalCorr.png (PNG copy)>] [16] [17] [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 904.
+[19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 904.
 (./report_II.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 963.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 963.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 904.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 904.
 Package rerunfilecheck Info: File `report_II.out' has not changed.
 (rerunfilecheck)             Checksum: 405276B1B8B4C884FFC403CB7B83EDB5;2017.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 963.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 904.
  ) 
 Here is how much of TeX's memory you used:
- 15050 strings out of 492982
- 216400 string characters out of 6134895
- 335525 words of memory out of 5000000
+ 15044 strings out of 492982
+ 216331 string characters out of 6134895
+ 332523 words of memory out of 5000000
  18162 multiletter control sequences out of 15000+600000
  50538 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1408,10 +1400,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmsy7.pfb>
-Output written on report_II.pdf (24 pages, 7921845 bytes).
+Output written on report_II.pdf (22 pages, 6615043 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 333 compressed objects within 4 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 376 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
  8383 words of extra memory for PDF output out of 10000 (max. 10000000)
 

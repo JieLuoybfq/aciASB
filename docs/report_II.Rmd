@@ -47,24 +47,21 @@ In the last years, an increasing scientific interest has been awoken in terms of
 the interaction between aerosols and the elements of the hydrological cycle 
 [@Ng2017, 1]. Precipitation patterns and their influence on human’s 
 living environment can be connected with a variety of ecological, economic and 
-social challenges on different spatial extents [@Boucher2013, 573 ff.]. 
-Especially in semi-arid and arid regions changes in rainfall rates can affect 
-health of local residents [@Issanova2015, 3213ff.]. Where water is an 
+social challenges on different spatial extents [@Boucher2013, 573 ff.]. Where water is an 
 already scarce resource, further decreases will promote rising vulnerability to 
-external threats (ibid.). Regarding this, the Aral Sea region can be seen as a 
+external threats [@Issanova2015, 3213ff.]. In this regard, the Aral Sea region can be seen as a 
 first-class example for investigations between aerosols and rainfall activities 
-[@Shen2019, 1]. With the desertification of the Aral Sea it has been 
-subject to substantial changes in terms of water availability 
-[@Groll2019, 1]. Deserts contain a high proportion of mineral aerosols, 
+[@Shen2019, 1]. Deserts contain a high proportion of mineral aerosols, 
 which may initiate climatological mechanisms of high complexity and, ultimately, 
 a shift in precipitation rates [@Boucher2013, 573 ff.]. Still, it is hard 
-to quantify the effects on other environmental parameters [@Ng2017, 1]. 
+to quantify their effects on other environmental parameters [@Ng2017, 1]. 
 The relationship between aerosols and cloud microphysics as well as precipitation 
 patterns remains one of the biggest uncertainties in climate studies [@Altaratz2013, 1].
+
 Aerosols play a major role in changes of the earth’s energy budget 
 [@Ng2017, 1] and can be seen as an important component of global 
 climate [@Carrico2003, 1]. There exist four major terrestrial sources for 
-atmospheric aerosols which, based on their chemical composition, either absorb 
+atmospheric aerosols which either absorb 
 or scatter incoming solar and terrestrial radiation [@Sharif2015, 657f]. 
 These direct effects may cool the surface and affect evaporation 
 [@Ng2017, 1]. Also, aerosols act as cloud condensation nuclei (CCN) 
@@ -72,19 +69,20 @@ leading to more and smaller droplets, which is called the first indirect aerosol
 effect [@Costantino2010, 1]. The result is a suppression of 
 precipitation, while the second indirect effect prolongs the cloud’s lifetime 
 through the prevention of coalescence favouring the occurrence of extreme events 
-[@Ng2017, 2]. By heating the cloud, the coverage area is reduced, 
-again leading to a higher amount of radiation on the ground. This attenuates 
-surface evaporation and further decreases rainfall (ibid.). A number of studies 
+[@Ng2017, 2]. By heating the cloud, the coverage area is reduced, attenuating 
+surface evaporation and further decreasing rainfall (ibid.). A number of studies 
 showed the presence of a strong seasonality in regard to aerosol concentration 
 in Central Asia [@Ge2016, 62ff.;@Li2018, 2ff.]. The highest 
 values occur in spring while the lowest concentrations have been measured in 
-winter (ibid.). However, some studies suggest the indicated perturbation of the 
+winter thus, leading to a temporal variation of aerosol effects on rainfall rates (ibid.). 
+Some studies suggest the indicated perturbation of the 
 hydrological cycle to be more distinct in some places than in others [@Ng2017, 2].
-The goal of this study is to analyse temporal and spatial variations of aerosols 
+
+Therefore, the goal of this study is to analyse temporal and spatial variations of aerosols 
 in the Aral Sea region in relation to precipitation patterns. Following a prior 
 seminar work regarding the analysis of aerosol and cloud microphysical properties, 
 it continues striving for an adequate estimation of the relationship between 
-hydro-climatological parameters. Therefore, the analysis consists of the 
+hydro-climatological parameters. The analysis consists of the 
 investigation of potential trends, their strength and direction in regard to 
 aerosol concentration to rainfall rates. In order to display the overall 
 effects, cloud microphysical parameters will be included as well as the 
@@ -93,23 +91,23 @@ variability [@Altaratz2013, 1f.; @Carrico2003, 2]. Some studies
 suggest high rain rates to be associated with a rising aerosol concentration 
 [@Boucher2013, 4]. Otherwise, contrary results have been observed as 
 well [@Ng2017, 1ff.]. In general, time and space seem to be crucial 
-[@Grandey2014, 5678ff.]. The hygroscopicity of aerosols cause the 
+[@Grandey2014, 5678ff.]. The hygroscopicity of aerosols causes the 
 relative humidity to be one of the most important drivers for the observed 
 relationship between AOD and rainfall [@Ng2017, 2f.]. When it 
 reaches a certain concentration, it can alter the results of correlation 
 analyses mainly through two effects [@Altaratz2013, 1f.]. First, relative 
-humidity may cause, depending on the aerosols’ chemical properties, substantial 
+humidity may cause substantial 
 growth of the particles in an humid environment [@Carrico2003, 1], 
 leading to coalescence of the droplets [@Ng2017, 2ff.]. This 
 depicts a rather positive relation between the variables 
 [@Grandey2014, 5678]. Second, wet scavenging of aerosols through rainfall 
-can occur in a mostly convective environment [@Grandey2014, 5680ff.]. It 
+occurs in a mostly convective environment [@Grandey2014, 5680ff.]. It 
 acts as an aerosol sink and results in a negative relationship between the 
 aerosol concentration and precipitation or rather relative humidity (ibid.). 
 Consequently, a negative correlation may not only reflect suppressed 
-precipitation [@Ng2017, 9]. Both effects demonstrate the importance 
-of the atmospheres’ humidity in questions of aerosol-precipitation relationships 
-and thus will be evaluated in the following study.
+precipitation but also the effect mentioned above [@Ng2017, 9]. 
+Both effects demonstrate the importance of the atmospheres’ humidity in questions
+of aerosol-precipitation relationships and thus will be evaluated in the following study.
 
 # Data and Methods
 ## Study area
@@ -120,7 +118,6 @@ and shows typical features of a temperate continental climate with semi-arid to
 arid conditions. The summers are short and hot with a mean of 28.2 $^\circ C$ while 
 winters are long and cold with a mean of -3.6 $^\circ C$. Precipitation rates are quite 
 low with a mean of about 82.1 $mm/year$ and a maximum during winter [@Gaybull2012, 287]. 
-Strong winds are often to be recorded in the study area [@Issanova2015, 3213f.].
 The Aral Sea once has been the fourth largest lake on earth covering a water volume 
 of 1.093 $km^3$ in 1960 [@Gaybull2012, 286]. Since then, it has been gradually 
 shrinking due to over-exploitation of its natural resources by water abstraction 
@@ -139,24 +136,16 @@ knitr::include_graphics("../results/plots/aral_aoi.png")
 ```
 
 ## Satellite products
-MODIS (Moderate Resolution Imaging Spectroradiometer) data currently is collected 
-by two platforms (TERRA and AQUA) orbiting the Earth on a Sun-synchronous polar 
-orbit. It measures solar and thermal radiation in 36 bands in resolutions ranging 
-from 250 $m$ to 1 $km$. For this study, daily resolution Level-2 data were used for 
-aerosol (MOD/MYD04) [@Levy2017] and cloud (MOD/MYD06) [@Platnick2017] parameters 
-as well as the corresponding geolocation files (MOD/MYD03) [@Team2012]. For 
-the explanation of the parameter retrieval, the reader is referred to the prior seminar
-work, as these explanations are not duplicated here, except for the newly included 
-parameters of precipitation and relative humidity.
+The aerosol and cloud properties were retrieved from the corresponding MODIS 
+(Moderate Resolution Imaging Spectroradiometer) products MOD/MYD04 and MOD/MYD06.
+An explanation of the retrival processes are found in our previous seminar work.
 
 ### Precipitation
 _Precipitation (P):_ Monthly sums of precipitation are derived from the CHIRPS
 data set. This data set is established by taking long-term monthly average data
 from ground stations in conjunction with observations from five satellite missions
 to establish a local regression model with a moving window for each grid cell of
-0.05° in size [@Funk2015, 3f.]. The independent variables in the local regressions
-consist always of the longitude and latitude information as well as one to three additional
-variables representing either the local elevation, the slope or satellite observations.
+0.05° in size [@Funk2015, 3f.]. 
 Potential residuals in comparison to the FAO climate normals are interpolated
 using inverse distance weighting and are than added to the local estimates [@Funk2015, 3].
 In a last step, for every pixel the five nearest ground stations are used to apply
@@ -169,25 +158,21 @@ _Relative Humidity (RH):_ RH is retrieved using the ERA-5 reanalysis data set pr
 the European Centre for Medium-Range Weather Forecasts (ECMWF) [@Forecasts2017]. 
 This data set combines observations and model predictions to get a comprehensive 
 model of global atmospheric conditions at small time steps and a nominal resolution
-of 31km at the ground, however the data has been regridded to 0.25°. The atmosphere 
-is modeled in 137 vertical levels from the surface to 1 Pa. Here, we used the 
+of 31km at the ground, however the data has been regridded to 0.25°. Here, we used the 
 monthly aggregates of RH only for the first seven atmospheric layers (1000 hPa - 850 hPa) 
-since the other data sets were also summarized to monthly aggregates. 850 Pa was 
-considered an appropriate height level, since local aerosol transports in the region
-are merely reported to be found above 5 km in height [@Chen2013]. 
+since they were considered to represent an appropriate height level, 
+because local aerosol transports in the region are merely reported to be found 
+above 5 km in height [@Chen2013, 14ff.]. 
 
 ## Methodology
 AOD and the cloud parameters were extracted from the respective MODIS data sets 
-using the HEG-Tool (HDF-EOS To GeoTIFF Conversion Tool). It enables a selection of the 
-cloud and aerosol properties clipping the data directly to the area of interest which 
-is leaned on the shape of the study area used by [@Ge2016]. The cloud parameters
-(at 6km nominal resolution) were resampled to the 10km nominal resolution of the AOD
-data set. 
-The observations of single MODIS overflights were then aggregated to a monthly 
-temporal-resolution, and means were calculated for four different seasons 
+using the HEG-Tool (HDF-EOS To GeoTIFF Conversion Tool). More specific working steps
+are described in our previous seminar work, however, we aggregated all data sets 
+to the nominal resoultion of AOD which is 10 x 10 km. 
+Individual observations were first aggregated to a monthly temporal-resolution.
+From there, average values were calculated for four different seasons 
 (Spring: March, April, May (MAM); Summer: June, July, August (JJA); Autumn: September, October, 
-November (SON); Winter: December, January, February (DJJ)) 
-for every year between 2003 to 2018.
+November (SON); Winter: December, January, February (DJJ)) for every year between 2003 to 2018.
 
 The CHIRPS data set already represents monthly aggregates. The cell values were resampled
 to the 10km resolution of the MODIS data and seasonal aggregates were calculated as described
@@ -201,10 +186,9 @@ while eliminating the influence of cloud parameters and RH. For this approach,
 we firstly checked if the data fulfills the assumptions to calculate Pearson's correlation.
 All variables are continuous in form. Pearson's correlation additionally is sensitive
 for outliers. Similarly to other studies we thus excluded exceptional high AOD values
-above 0.3. Also, we assume linear relationships between the variables for values below the 
-AOD threshold of 0.3. We then calculated the correlation coefficient between AOD and P
-while controlling for any other variable. This is achieved by calculating the partial correlation. 
-Partial correlation is used as a measure of the linear dependence between two variables 
+above 0.3. We then calculated the correlation coefficient between AOD and P
+while controlling for any other variable. This is achieved by calculating the partial correlation
+which is used as a measure of the linear dependence between two variables 
 while controlling for the influences of a third.
 In fact, not the original values of AOD and P are fitted, but rather the residuals
 which were calculated by using the control variable as a predictor. Thus, only the 
@@ -229,20 +213,17 @@ The temporal and spatial variations of several aerosol and cloud parameters have
 in the previous seminar paper. Here, we only represent the additional parameters P
 and RH.
 
-
-
-_Temporal and spatial dynamics for P_
+_Temporal and spatial dynamics for P_:
 During the time series under study (2003 - 2018) we can observe a varying 
 pattern for precipitation (Fig. \ref{fig:prec_yearly}). In 2003 we observe relatively high 
 precipitation rates with an average above 200 mm per pixel and a median even 
 slightly higher than the mean, which is in accordance with another study reporting
-2003 as a very-wet year in Central Asia [@Xu2016]. This amount of high precipitation rates from the 
-year 2003 is not reached again during the time series, instead most of the years 
+2003 as a very-wet year in Central Asia [@Xu2016, 394]. This amount of high precipitation rates
+is not reached again, instead most of the years 
 indicate a mean value of precipitation below 150 mm per pixel. The years 2008, 
-2011, and 2014 show exceptional low precipitation, which are note completely
-in line with the findings of @Xu2016, indicating 2006, 2008 and 2011 as severe 
-drought years. In 2015 and 2016 precipitation is higher than during the other years, 
-however the high precipitation rate of 2003 is not reached.
+2011, and 2014 show exceptional low precipitation, which are not completely
+in line with the findings of @Xu2016. In 2015 and 2016 precipitation is higher 
+than during the other years, however the high precipitation rate of 2003 is not reached.
 
 
 ```{r prec_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly sum of precipitation [mm].", dpi=72}
@@ -259,35 +240,33 @@ Concerning the intra-annual pattern of precipitation, we observe the highest
 rates in March and April as well as another peak during November and December of
 about 19 mm per pixel (Fig. \ref{fig:prec_monthly}). During the summer months of 
 July to September we observe the lowest precipitation rates with means about 5 mm. 
-The seasonality of precipitation is thus clearly visible and is in accordance with 
-the seasonal division we chose here for our analysis.
+The seasonality of precipitation is clearly visible, with very dry conditions from June 
+to September and relatively wet conditions from October to May.
 
 ```{r p_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for P for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/seasonal_means_P.png")
 ```
 
-The spatial pattern of P shows that higher precipitation rates are found above
-the Aral Sea and Aralkum dessert (Fig. \ref{fig:p_seasonal}) as well as in the 
+The spatial pattern of P shows that higher precipitation rates are found North of
+the Aral Sea and Aralkum desert (Fig. \ref{fig:p_seasonal}) as well as in the 
 South-East of the study area during the first and fourth season. The second and 
 third season are characterized by very low precipitation rates, especially in 
 the South of the study area. The linear trend analysis indicates significant 
 linear trends only during the first season in the South-East of the study area. 
 Here, moderate to high negative slopes seem to dominate the trend (about -2 to -5 mm/year). 
-During the second season we also observe moderate to high decrease of precipitation
+During the second season we also observe a moderate to high decrease of precipitation
 rate close to the Aral Sea and its Northern neighborhood. During the third and
-fourth season we barley observe patterns of significant linear trends. 
+fourth season we barely observe patterns of significant linear trends. 
 
-
-
-_Temporal and spatial dynamics for RH_
+_Temporal and spatial dynamics for RH_:
 Concerning the inter-annual dynamic of relative humidity, we observe a general 
 decrease of RH per pixel during the first few years (Fig. \ref{fig:rh_yearly}). 
 Similar to P, the highest level of RH is reached in 2003 with a mean value of 
 50%. In 2010 and 2014, we observe RH values below 40%, and in 2012 and 2018 RH 
 reaches only about 42%. With the exception of 2014, we do not see the gravity of 
 the drought years of 2008 and 2011 in the dynamic of RH. During most other years 
-RH usually reaches between 43 - 46%, however, in 2015 and 2016 the mean is about 
-48%, in the same years we also observed relatively high precipitation rates.
+RH usually reaches between 43 - 46%. In 2015 and 2016 the mean is about 
+48%, which are the same years we observed relatively high precipitation rates.
 
 ```{r rh_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly median of relative humididty [\\%].", dpi=72}
 knitr::include_graphics("../results/plots/RH_yearly.png")
@@ -335,8 +314,8 @@ center of the study area and South of the Aral Sea. We also observe some, though
 non-significant, positive correlations in the North and the far South-East of the 
 study area. During the second season, there are only very few locations with 
 significant correlations. In general, the picture is very patchy with positive 
-and negative correlations distributed fairly random in the study area, especially 
-next to the Aral Sea. In the third season we observe a comprehensive patch of 
+and negative correlations distributed fairly random in the study area. 
+In the third season we observe a comprehensive patch of 
 negative correlations in the North of the study area and positive correlations 
 in the South. However, the positive correlations are not significant. A similar 
 pattern, though larger in size extending to the South is observed during the 
@@ -369,8 +348,7 @@ are observed to become more patchy.
 knitr::include_graphics("../results/plots/cor_AOD_550_P_by_CWP.png")
 ```
 
-_Partial Correlation controlling for CWP_
-
+_Partial Correlation controlling for CWP_:
 For CWP again, the main patterns compared to the other analysis do not change 
 (Fig. \ref{fig:cor_aod_p_cwp}). However, there seems to be a slight increase in 
 the negative correlations during the fourth season.
@@ -382,13 +360,12 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH.png")
 _Partial Correlation controlling for RH_: When controlling for RH, some changes 
 can be observed (Fig. \ref{fig:cor_aod_rh}). In the first season,
 the size of the patch of significant negative correlations around the Aral Sea
-and Aralkum dessert is substantially reduced. The same finding holds true for
+and Aralkum desert is substantially reduced. The same finding holds true for
 the Norther patch of negative correlations in the third season. In the fourth 
 season, directly North of the Aral Sea, we observe fewer significant negative 
 correlations, however, the comprehensive patch in the Center of the study area
 can still be observed. In general, when controlling for RH, there seems to be 
-a shift into the direction of positive correlations, because the positive correlations
-increase in amplitude without reaching the level of significance.
+a shift into the direction of positive correlations without reaching the level of significance.
 
 
 ```{r cor_aod_all, echo=FALSE, fig.align="center", fig.pos="H", out.width="65%", fig.cap="Spatial distribution of correlation coefficient rho between AOD and P controlled for all other variables for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
@@ -396,8 +373,7 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png")
 ```
 
 _Partial Correlation controlling for CWP, COT, CWP, and RH_: When controlling for 
-all variables, the correlations patterns get more patchy for every season, 
-which means that in large proportions of the study area we observe non-significant
+all variables we observe in large proportions of the study area non-significant
 positive and negative correlations in fairly random patterns next to each other (Fig. \ref{fig:cor_aod_all}).
 The exceptions are a comprehensive patch of negative correlations in the North 
 of the study area in the third season, though its size is substantially reduced
@@ -407,18 +383,17 @@ Compared to the analysis controlling for RH only, the non-significant positive
 correlations also seem to decrease in amplitude.
 
 _Analysis of significant correlations_: Figure \ref{fig:total_corr} shows the 
-correlations of selected pixels which showed significant correlations
-for all four seasons and based on the controlling scenario. For all seasons and 
+correlations of these selected pixels which indicated a significant correlation
+on the 95% confidence intervall.
+The figure is divided by season and based on the controlling scenario. For all seasons and 
 analysis we observe negative correlations between AOD and P between -0.1 and -0.38.
 The correlation values for the second season are substantially closer to 0 than 
-compared to all other seasons which can be easily explained by the very small number
-of pixels which showed significant correlations during this seasons and the general
-very low precipitation rates during this season.
+compared to all other seasons.
 For the first and third season, controlling for parameters of cloud microphysics
 seem to increase the negative correlations compared to the baseline analysis while
-controlling for RH delivers smaller correlations values. This observations does not hold
-for the fourth season, where controlling for RH increases the correlation 
-coefficient, while controlling for cloud microphysics shows little to no effects.
+controlling for RH delivers smaller correlations values.
+For the fourth season, when controlling for RH, we observer an increase in the correlation 
+coefficient. Controlling for cloud microphysics shows little to no effects.
 When all variables are controlled for, we observe no effects on the correlation 
 coefficient for the first and fourth season. In the third season, controlling
 for all variables decreases the coefficient from -0.38 to -0.28.
@@ -432,14 +407,12 @@ knitr::include_graphics("../results/plots/totalCorr.png")
 
 The results show the absence of a linear trend for the precipitation rates and 
 the relative humidity. Otherwise, a distinct seasonal pattern which is coinciding 
-between both parameters can be assumed. High moisture is accompanied by 
-precipitation maxima in spring and winter, especially north of the study area 
-and around the Aral Sea. This depicts a high spatial variability with a 
+between both parameters can be assumed. This depicts a high spatial variability with a 
 confirmation of the assumptions made before concerning the hydrological cycle 
 for Central Asia [@Li2018, 2f.]. 
 
 Beyond that, the relationship between AOD and precipitation controlled for cloud 
-microphysical parameters as well as the relative humidity were analysed. 
+microphysical parameters as well as the relative humidity was analysed. 
 Depending on the seasons, the correlation analyses imply the existence of 
 diverging effects. Over all seasons, primary negative correlations turn out to 
 be significant with a medium to high strength. In general, this contradicts the 
@@ -454,19 +427,17 @@ findings about a wet scavenging effect in Central Asia during wet seasons [@Gran
 In summer, the very low precipitation rates (<5mm) prevent the formation of 
 distinct effects between aerosols and rainfall rates. As a result, only scattered 
 patches of correlations occur. In autumn, the dry conditions attenuate the 
-precipitation rates in September, thus influencing possible the outcome of the 
+precipitation rates in September, thus influencing the outcome of the 
 correlation analysis. In the north of the study area, negative correlations appear. 
-The partial correlation analysis reveals that here RH is not the primary driver. 
+The partial correlation analysis reveals that RH is not the primary driver. 
 Also, a direct influence of the depicted cloud microphysics cannot be assumed. 
 Instead, the effects may originate from unknown effects, like meteorological 
-parameters or satellite retrieval biases [@Ng2017, 11.]. 
-
+parameters or satellite retrieval biases [@Ng2017, 11.].  
 In winter, a similarly strong patch of negative correlations is visible in the 
 northern parts of the study area, which prevails when controlling for other 
-parameters. This finding implies, that it is not the impact of one of the 
-investigated parameters primary dominating the correlation analysis. Only a 
-small portion around the northern edge of the Aral Sea pictures RH to be a 
-primary driver, because we observe the change from negative to positive correlations. 
+parameters. This finding impliesnone of the investigated parameters dominates the correlation analysis. 
+Only a small portion around the northern edge of the Aral Sea pictures RH to be a 
+primary driver. 
 The analysis indicates a highly temporal variety of effects between the seasons 
 as well as spatial diverse formations within the study area. 
 Depending on spatio-temporal conditions the relationship between aerosol 
@@ -479,15 +450,15 @@ may suppress hygroscopic growth, leading to negative correlations.
 
 In regards to the aerosol type, these effects could be attributed to the 
 dominance of mineral aerosols, but an comprehensive analysis is not feasible 
-with the data at hand [@Altaratz2013, 4f.]. Dry conditions during some seasons 
+with the data at hand [@Altaratz2013, 4f.]. Dry conditions
 promote ambiguous effects which cannot be traced back to the investigated 
 parameters alone. However, RH seems to be one of the main drivers of the 
 aerosol-rainfall relationship. Accounting for RH, reveals rather positive 
 correlations between AOD and precipitation in wet conditions during spring, 
 while the contrary is observed during winter. Thus, the relationship between 
-aerosol and precipitation data imply a rainfall suppression in some locations 
-during some seasons, but these findings are not adequately pictured in the 
-correlation to cloud properties (the reader is referred to our previous seminar work). 
+aerosol and precipitation data implies in parts a rainfall suppression, but 
+these findings are not adequately pictured in the correlation to cloud properties 
+(the reader is referred to our previous seminar work). 
 It remains unknown whether indirect aerosol effects like the suppression of precipitation 
 in context to the Twomey- or Albrecht-effect occur in the study area. 
 As a result, the study’s hypotheses can be neither confirmed not denied. 
@@ -499,15 +470,16 @@ Regardless of the division, months with relatively high and low values may be
 sampled within the same seasons. Second, an additional source of error may be 
 the existence of a large-scale meteorological variability [@Altaratz2013, 4f.]. 
 Especially in data sparse regions, a higher resolution for observing meteorological 
-parameters, such as precipitation, could enhance the knowledge of the ongoing processes. 
+parameters could enhance the knowledge of the ongoing processes. 
 In the context of satellite retrieval bias, failed data acquisition or 
-data inhomogeneity, further evaluation is necessary in semi-arid and arid regions [@Grandey2014, 5683]. 
+data inhomogeneity, further evaluation is necessary [@Grandey2014, 5683]. 
 Nonetheless, first results for the hydrological cycle can be derived. 
 Wet-scavenging as well as interactions of aerosols with cloud microphysics can 
 lead to changes in the relationship between aerosols and precipitation. 
 However, the effects vary in time and space, leading to either precipitation 
 enhancement or suppression. Tracking of the aerosols’ origin in addition to an 
-analysis of the vertical structure and aerosol type can ensure more reliable results [@Sharif2015, 660ff.].
+analysis of the vertical structure and aerosol type can ensure more reliable results 
+[@Sharif2015, 660ff.].
 
 # Conclusion
 

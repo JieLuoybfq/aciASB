@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.12)  25 APR 2020 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.12)  28 APR 2020 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1289,54 +1289,54 @@ l.524
 File: ../results/plots/cor_AOD_550_P_by_CER.png Graphic file (type png)
 <use ../results/plots/cor_AOD_550_P_by_CER.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_CER.png  used on inp
-ut line 544.
+ut line 545.
 (pdftex.def)             Requested size: 305.29309pt x 218.16566pt.
 [10pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.550 
+l.551 
        <../results/plots/cor_AOD_550_P.png>]
 <../results/plots/cor_AOD_550_P_by_COT.png, id=212, 3537.215pt x 2515.3975pt>
 File: ../results/plots/cor_AOD_550_P_by_COT.png Graphic file (type png)
 <use ../results/plots/cor_AOD_550_P_by_COT.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_COT.png  used on inp
-ut line 561.
+ut line 562.
 (pdftex.def)             Requested size: 305.328pt x 217.12599pt.
 [11pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.567 
+l.568 
        <../results/plots/cor_AOD_550_P_by_CER.png>]
 <../results/plots/cor_AOD_550_P_by_CWP.png, id=219, 3523.1625pt x 2520.41624pt>
 
 File: ../results/plots/cor_AOD_550_P_by_CWP.png Graphic file (type png)
 <use ../results/plots/cor_AOD_550_P_by_CWP.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_CWP.png  used on inp
-ut line 577.
+ut line 578.
 (pdftex.def)             Requested size: 305.29771pt x 218.40529pt.
 [12pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.588 
+l.589 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.588 
+l.589 
        <../results/plots/cor_AOD_550_P_by_COT.png> <../results/plots/cor_AOD_55
 0_P_by_CWP.png>]
 <../results/plots/cor_AOD_550_P_by_RH.png, id=227, 3537.215pt x 2523.4275pt>
 File: ../results/plots/cor_AOD_550_P_by_RH.png Graphic file (type png)
 <use ../results/plots/cor_AOD_550_P_by_RH.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_RH.png  used on inpu
-t line 591.
+t line 592.
 (pdftex.def)             Requested size: 305.328pt x 217.81912pt.
 <../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png, id=229, 3526.17375pt x 2
 528.44624pt>
@@ -1344,19 +1344,19 @@ File: ../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png Graphic file (type p
 ng)
 <use ../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png>
 Package pdftex.def Info: ../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png  
-used on input line 612.
+used on input line 613.
 (pdftex.def)             Requested size: 305.28963pt x 218.90822pt.
 [13pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.618 
+l.619 
        <../results/plots/cor_AOD_550_P_by_RH.png>]
 <../results/plots/totalCorr.png, id=237, 836.1639pt x 499.8675pt>
 File: ../results/plots/totalCorr.png Graphic file (type png)
 <use ../results/plots/totalCorr.png>
-Package pdftex.def Info: ../results/plots/totalCorr.png  used on input line 650
+Package pdftex.def Info: ../results/plots/totalCorr.png  used on input line 651
 .
 (pdftex.def)             Requested size: 305.33125pt x 182.5302pt.
 [14pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
@@ -1364,24 +1364,24 @@ Package pdftex.def Info: ../results/plots/totalCorr.png  used on input line 650
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.656 
+l.657 
        <../results/plots/cor_AOD_550_P_by_RH_CWP_CER_COT.png>] [15pdfTeX warnin
 g (ext4): destination with the same identifier (name{figure.14}) has been alrea
 dy used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.707 
+l.708 
        <../results/plots/totalCorr.png (PNG copy)>] [16] [17] [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 904.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 905.
 [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 904.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 905.
 (./report_II.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 904.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 904.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 905.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 905.
 Package rerunfilecheck Info: File `report_II.out' has not changed.
 (rerunfilecheck)             Checksum: 405276B1B8B4C884FFC403CB7B83EDB5;2017.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 904.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 905.
  ) 
 Here is how much of TeX's memory you used:
  15044 strings out of 492982
@@ -1400,10 +1400,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmsy7.pfb>
-Output written on report_II.pdf (22 pages, 6615043 bytes).
+Output written on report_II.pdf (22 pages, 6615031 bytes).
 PDF statistics:
- 376 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
+ 374 PDF objects out of 1000 (max. 8388607)
+ 315 compressed objects within 4 object streams
  87 named destinations out of 1000 (max. 500000)
  8383 words of extra memory for PDF output out of 10000 (max. 10000000)
 

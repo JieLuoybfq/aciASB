@@ -65,7 +65,7 @@ atmospheric aerosols which either absorb
 or scatter incoming solar and terrestrial radiation [@Sharif2015, 657f]. 
 These direct effects may cool the surface and affect evaporation 
 [@Ng2017, 1]. Also, aerosols act as cloud condensation nuclei (CCN) 
-leading to more and smaller droplets, which is called the first indirect aerosol 
+leading to more and smaller droplets which is called the first indirect aerosol 
 effect [@Costantino2010, 1]. The result is a suppression of 
 precipitation, while the second indirect effect prolongs the cloud’s lifetime 
 through the prevention of coalescence favouring the occurrence of extreme events 
@@ -145,7 +145,7 @@ _Precipitation (P):_ Monthly sums of precipitation are derived from the CHIRPS
 data set. This data set is established by taking long-term monthly average data
 from ground stations in conjunction with observations from five satellite missions
 to establish a local regression model with a moving window for each grid cell of
-0.05° in size [@Funk2015, 3f.]. 
+0.05 ° in size [@Funk2015, 3f.]. 
 Potential residuals in comparison to the FAO climate normals are interpolated
 using inverse distance weighting and are than added to the local estimates [@Funk2015, 3].
 In a last step, for every pixel the five nearest ground stations are used to apply
@@ -158,7 +158,7 @@ _Relative Humidity (RH):_ RH is retrieved using the ERA-5 reanalysis data set pr
 the European Centre for Medium-Range Weather Forecasts (ECMWF) [@Forecasts2017]. 
 This data set combines observations and model predictions to get a comprehensive 
 model of global atmospheric conditions at small time steps and a nominal resolution
-of 31km at the ground, however the data has been regridded to 0.25°. Here, we used the 
+of 31 km at the ground, however the data has been regridded to 0.25 °. Here, we used the 
 monthly aggregates of RH only for the first seven atmospheric layers (1000 hPa - 850 hPa) 
 since they were considered to represent an appropriate height level, 
 because local aerosol transports in the region are merely reported to be found 
@@ -175,7 +175,7 @@ From there, average values were calculated for four different seasons
 November (SON); Winter: December, January, February (DJJ)) for every year between 2003 to 2018.
 
 The CHIRPS data set already represents monthly aggregates. The cell values were resampled
-to the 10km resolution of the MODIS data and seasonal aggregates were calculated as described
+to the 10 km resolution of the MODIS data and seasonal aggregates were calculated as described
 above. For RH, the process was basically identical, except that the median was 
 calculated across the seven vertical layers, before the data was resampled to the 
 same resolution as the other data sets.
@@ -202,7 +202,7 @@ driving this relationship [@Engstrom2010; @Gryspeerdt2014; @Ng2017].
 
 The results of this analysis are presented on a pixel basis for each season to 
 display spatial and temporal differences. Additionally, the correlation of all 
-pixels which show a significant relationship at the 95% confidence interval 
+pixels which show a significant relationship at the 95 % confidence interval 
 is calculated to investigate the overall direction and strength of 
 correlation between aerosol and cloud parameters [@Alam2010, 1170f.].
 
@@ -262,11 +262,11 @@ _Temporal and spatial dynamics for RH_:
 Concerning the inter-annual dynamic of relative humidity, we observe a general 
 decrease of RH per pixel during the first few years (Fig. \ref{fig:rh_yearly}). 
 Similar to P, the highest level of RH is reached in 2003 with a mean value of 
-50%. In 2010 and 2014, we observe RH values below 40%, and in 2012 and 2018 RH 
-reaches only about 42%. With the exception of 2014, we do not see the gravity of 
+50%. In 2010 and 2014, we observe RH values below 40 %, and in 2012 and 2018 RH 
+reaches only about 42 %. With the exception of 2014, we do not see the gravity of 
 the drought years of 2008 and 2011 in the dynamic of RH. During most other years 
-RH usually reaches between 43 - 46%. In 2015 and 2016 the mean is about 
-48%, which are the same years we observed relatively high precipitation rates.
+RH usually reaches between 43 - 46 %. In 2015 and 2016 the mean is about 
+48 %, which are the same years we observed relatively high precipitation rates.
 
 ```{r rh_yearly, echo=FALSE, fig.align="center", fig.show="hold", out.width="80%", fig.cap="Boxplots for yearly median of relative humididty [\\%].", dpi=72}
 knitr::include_graphics("../results/plots/RH_yearly.png")
@@ -278,16 +278,16 @@ knitr::include_graphics("../results/plots/RH_monthly.png")
 
 
 The intra-annual dynamic of RH follows a very clear seasonal pattern with the 
-lowest RH (~31%) found in the warm summer months June to August 
+lowest RH (~31 %) found in the warm summer months June to August 
 (Fig. \ref{fig:rh_monthly}). RH is maximized during December to March, with levels 
-between 55 - 58%. The spatial pattern of RH shows higher values through the 
+between 55 - 58 %. The spatial pattern of RH shows higher values through the 
 study area for the first and fourth season (Fig. \ref{fig:rh_seasonal}). For 
 the second and fourth season, the pattern is very similar with the lowest RH 
 found in the South-East and a positive gradient towards the North-West of the 
 study area. However, the values during the second season are substantially lower 
 than compared to the third. Significant linear trends are only found during the 
 second season South of the Aral Sea. Here, low negative slopes dominate the trend 
-(about -0.3%/year).
+(about -0.3 %/year).
 
 ```{r rh_seasonal, echo=FALSE, fig.align="center", fig.pos="H", out.width="60%", fig.cap="Spatial distribution of seasonal means for RH for MAM (a), JJA (b), SON (c), and DJF (d).", dpi=72}
 knitr::include_graphics("../results/plots/seasonal_means_RH.png")
@@ -298,7 +298,7 @@ As indicated in the methods section, we analysed the partial correlation between
 AOD and P controlling for three parameters of cloud microphysics and RH. As a 
 baseline we also calculated the correlation without any controlling variable. We 
 excluded all pixels for which there were no observations in AOD at any time step
-in order to capture the complete time series of the remaining pixels. This areas
+in order to capture the complete time series of the remaining pixels. These areas
 are indicated in grey color in the figures below. 
 
 
@@ -307,10 +307,10 @@ knitr::include_graphics("../results/plots/cor_AOD_550_P.png")
 ```
 
 _Baseline correlation_: Areas with missing values are concentrated around the Aral 
-Sea for all seasons (Fig. \ref{fig:cor_aod_p}). During the first and third season, 
+Sea in all seasons (Fig. \ref{fig:cor_aod_p}). During the first and third season, 
 the number of missing observations is higher than during the other seasons. For 
-the first season, we observe a pattern of strongly negative correlation in the 
-center of the study area and South of the Aral Sea. We also observe some, though 
+the first season, we observe a pattern of strongly negative correlations in the 
+centre of the study area and South of the Aral Sea. We also observe some, though 
 non-significant, positive correlations in the North and the far South-East of the 
 study area. During the second season, there are only very few locations with 
 significant correlations. In general, the picture is very patchy with positive 
@@ -318,7 +318,7 @@ and negative correlations distributed fairly random in the study area.
 In the third season we observe a comprehensive patch of 
 negative correlations in the North of the study area and positive correlations 
 in the South. However, the positive correlations are not significant. A similar 
-pattern, though larger in size extending to the South is observed during the 
+pattern, though larger in size extending to the South, is observed during the 
 fourth season. These correlations are significant and negative and generally 
 between -0.4 and -0.7.
 
@@ -363,7 +363,7 @@ the size of the patch of significant negative correlations around the Aral Sea
 and Aralkum desert is substantially reduced. The same finding holds true for
 the Norther patch of negative correlations in the third season. In the fourth 
 season, directly North of the Aral Sea, we observe fewer significant negative 
-correlations, however, the comprehensive patch in the Center of the study area
+correlations, however, the comprehensive patch in the centre of the study area
 can still be observed. In general, when controlling for RH, there seems to be 
 a shift into the direction of positive correlations without reaching the level of significance.
 
@@ -378,21 +378,21 @@ positive and negative correlations in fairly random patterns next to each other 
 The exceptions are a comprehensive patch of negative correlations in the North 
 of the study area in the third season, though its size is substantially reduced
 compared to the baseline analysis, as well as the comprehensive patch
-of negative correlations in the Center of the study area during the fourth season.
+of negative correlations in the centre of the study area during the fourth season.
 Compared to the analysis controlling for RH only, the non-significant positive
 correlations also seem to decrease in amplitude.
 
 _Analysis of significant correlations_: Figure \ref{fig:total_corr} shows the 
 correlations of these selected pixels which indicated a significant correlation
-on the 95% confidence intervall.
+on the 95 % confidence intervall.
 The figure is divided by season and based on the controlling scenario. For all seasons and 
 analysis we observe negative correlations between AOD and P between -0.1 and -0.38.
 The correlation values for the second season are substantially closer to 0 than 
 compared to all other seasons.
 For the first and third season, controlling for parameters of cloud microphysics
-seem to increase the negative correlations compared to the baseline analysis while
+seems to increase the negative correlations compared to the baseline analysis while
 controlling for RH delivers smaller correlations values.
-For the fourth season, when controlling for RH, we observer an increase in the correlation 
+For the fourth season, when controlling for RH, we observe an increase of the correlation 
 coefficient. Controlling for cloud microphysics shows little to no effects.
 When all variables are controlled for, we observe no effects on the correlation 
 coefficient for the first and fourth season. In the third season, controlling
@@ -424,7 +424,7 @@ changed. Contrary, building the partial correlation with RH
 inverts the direction of the correlation. This corresponds with other studies’ 
 findings about a wet scavenging effect in Central Asia during wet seasons [@Grandey2014, 5682f.]. 
 
-In summer, the very low precipitation rates (<5mm) prevent the formation of 
+In summer, the very low precipitation rates (<5 mm) prevent the formation of 
 distinct effects between aerosols and rainfall rates. As a result, only scattered 
 patches of correlations occur. In autumn, the dry conditions attenuate the 
 precipitation rates in September, thus influencing the outcome of the 
@@ -432,8 +432,7 @@ correlation analysis. In the north of the study area, negative correlations appe
 The partial correlation analysis reveals that RH is not the primary driver. 
 Also, a direct influence of the depicted cloud microphysics cannot be assumed. 
 Instead, the effects may originate from unknown effects, like meteorological 
-parameters or satellite retrieval biases [@Ng2017, 11.].  
-In winter, a similarly strong patch of negative correlations is visible in the 
+parameters or satellite retrieval biases [@Ng2017, 11.]. During winter, a similarly strong patch of negative correlations is visible in the 
 northern parts of the study area, which prevails when controlling for other 
 parameters. This finding impliesnone of the investigated parameters dominates the correlation analysis. 
 Only a small portion around the northern edge of the Aral Sea pictures RH to be a 

@@ -8,18 +8,18 @@ library(gridExtra)
 library(ggpubr)
 
 # select relevant parameters
-paras = str_to_upper(c("p"))
+paras = str_to_upper(c("rh"))
 
 # read parameters observation number files into raster stack in a list
 paraStacks = lapply(paras, function(x){
-  stack(list.files(paste0("../results/",x), pattern = "chirps", full.names = TRUE))
+  stack(list.files(paste0("../results/",x), pattern = ".tif", full.names = TRUE))
 })
 
 
 # vector indicating the years for which to calculate mean values
 years = 2003:2018
 
-if (!file.exists("../results/values/yearly_Precipitation.rds")){
+if (!file.exists("../results/values/yearly_RH.rds")){
   # nested lapply loop through every parameter and the years to get one mean value per parameter and year 
   yearlySums = lapply(paraStacks, function(x){
 
@@ -39,15 +39,15 @@ if (!file.exists("../results/values/yearly_Precipitation.rds")){
   # preparation for plotting
   names(yearlySums) = paras
   for (i in 1:length(paras)){
-    yearlyMeans[[paras[i]]]$type = paras[i]
+    yearlySums[[paras[i]]]$type = paras[i]
   }
   
   df = as_tibble(do.call(rbind, yearlySums))
   #df$year = years
   #df = melt(df, id.vars = "year")
-  saveRDS(df, file = "../results/values/yearly_Precipitation.rds")
+  saveRDS(df, file = "../results/values/yearly_RH.rds")
 } else {
-  df = readRDS("../results/values/yearly_Precipitation.rds")
+  df = readRDS("../results/values/yearly_RH.rds")
 }
 
 
@@ -56,17 +56,19 @@ meanVals = df %>%
   summarize(mean = mean(values))
 
 # using ggplot2 to plot every parameter in a facet
-meanplot = ggplot(df, aes(x=year))+
-  geom_boxplot(aes(y=values, group=year))+
-  geom_point(data=meanVals, aes(x=year, y=mean), color="red")+
-  scale_x_discrete(limits=years)+
+meanplot = ggplot(df, aes(x=as.factor(year)))+
+  geom_boxplot(aes(y=values, group=as.factor(year)))+
+  geom_point(data=meanVals, aes(x=as.factor(year), y=mean), color="red")+
+  scale_x_discrete(limits=as.factor(years))+
+  xlab("Year")+
+  ylab("Relative Humidity [%]")+
   #geom_text(data=regCoef,
   #          mapping= aes(x=2017, y=10, label= paste("slope: ", round(slope, 2), sep="")))+
   #geom_text(data=regCoef,
   #          mapping= aes(x=2014, y=10, label= paste("R²: ", round(r, 4), sep="")))+
   theme_minimal()+
-  theme(axis.text.x = element_text(angle = 45))
+  theme(axis.text.x = element_text(angle = 45, size = 20))
 
 # saving plot to disk
-ggsave(plot=meanplot, file = "../results/plots/precipitation_yearly.png", dpi=600, device="png", width = 20, height = 10)
+ggsave(plot=meanplot, file = "../results/plots/RH_yearly.png", dpi=600, device="png", width = 20, height = 10)
 

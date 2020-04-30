@@ -19,7 +19,7 @@ paraStacks = lapply(paras, function(x){
 # vector indicating the years for which to calculate mean values
 years = 2003:2018
 
-if (!file.exists("../results/values/yearly_Precipitation.rds")){
+if (!file.exists("../results/values/yearly_RH.rds")){
   # nested lapply loop through every parameter and the years to get one mean value per parameter and year 
   yearlySums = lapply(paraStacks, function(x){
 
@@ -45,9 +45,9 @@ if (!file.exists("../results/values/yearly_Precipitation.rds")){
   df = as_tibble(do.call(rbind, yearlySums))
   #df$year = years
   #df = melt(df, id.vars = "year")
-  saveRDS(df, file = "../results/values/yearly_Precipitation_RH.rds")
+  saveRDS(df, file = "../results/values/yearly_RH.rds")
 } else {
-  df = readRDS("../results/values/yearly_Precipitation.rds")
+  df = readRDS("../results/values/yearly_RH.rds")
 }
 
 
@@ -71,5 +71,5 @@ meanplot = ggplot(df, aes(x=as.factor(year)))+
         text = element_text(size = 20))
 
 # saving plot to disk
-ggsave(plot=meanplot, file = "../results/plots/P_yearly.png", dpi=300, device="png", width = 20, height = 10)
+ggsave(plot=meanplot, file = "../results/plots/RH_yearly.png", dpi=300, device="png", width = 20, height = 10)
 
